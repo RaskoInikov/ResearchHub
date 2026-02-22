@@ -1,6 +1,6 @@
 package com.researchhub.rams.repository;
 
-import com.researchhub.rams.entity.*;
+import com.researchhub.rams.entity.Article;
 
 import java.util.List;
 import java.util.Optional;

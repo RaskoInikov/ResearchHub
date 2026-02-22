@@ -12,7 +12,7 @@ import com.researchhub.rams.repository.ArticleRepository;
 public class ArticleService {
     private final ArticleRepository repository;
 
-    private ArticleService(ArticleRepository repository) {
+    public ArticleService(ArticleRepository repository) {
         this.repository = repository;
     }
 

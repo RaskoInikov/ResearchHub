@@ -4,6 +4,9 @@ import com.researchhub.rams.dto.ArticleDto;
 import com.researchhub.rams.entity.Article;
 
 public class ArticleMapper {
+    private ArticleMapper() {
+        throw new UnsupportedOperationException("Utility class");
+    }
 
     public static ArticleDto toDto(Article article) {
         return ArticleDto.builder()
