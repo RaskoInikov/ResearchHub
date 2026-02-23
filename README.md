@@ -1,5 +1,3 @@
-# Хейлик Дмитрий 450501
-
 # ResearchHub RAMS – Article REST API
 ResearchHub RAMS is a Spring Boot REST API application. The application provides basic CRUD-like operations for managing a core domain entity — Article.
 
