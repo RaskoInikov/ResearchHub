@@ -6,16 +6,17 @@ Controller → Service → Repository
 
 It also includes DTO mapping, custom exception handling, and static code analysis configuration.
 
-# Usage
-## Application Run
+## Usage
+### Build the Application
 ./gradlew build
 
+### Run the Application
 ./gradlew bootRun
 
-## Application CheckStyle
+### Application CheckStyle
 ./gradlew checkstyleMain
 
-# SonarCloud
+## SonarCloud
 Project analysis is available at:
 
 https://sonarcloud.io/project/overview?id=RaskoInikov_ResearchHub
