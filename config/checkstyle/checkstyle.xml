@@ -2,6 +2,18 @@
 <!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+    <!-- Only one space allowed before '{' -->
+    <module name="RegexpSingleline">
+        <property name="format" value="\S\s{2,}\{"/>
+        <property name="message" value="Only one space allowed before '{'"/>
+    </module>
+
+    <!-- No space directly after '{' -->
+    <module name="RegexpSingleline">
+        <property name="format" value="\{\s{2,}"/>
+        <property name="message" value="Only one space allowed after '{'"/>
+    </module>
+
     <property name="charset" value="UTF-8" />
     <property name="severity" value="warning" />
     <property name="fileExtensions" value="java" />

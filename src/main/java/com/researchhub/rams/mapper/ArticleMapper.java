@@ -3,7 +3,7 @@ package com.researchhub.rams.mapper;
 import com.researchhub.rams.dto.ArticleDto;
 import com.researchhub.rams.entity.Article;
 
-public class ArticleMapper {
+public final class ArticleMapper {
     private ArticleMapper() {
         throw new UnsupportedOperationException("Utility class");
     }

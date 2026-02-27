@@ -55,3 +55,8 @@ tasks.withType(Checkstyle) {
 		html.required = true
 	}
 }
+
+tasks.withType(Checkstyle).configureEach {
+    ignoreFailures = false
+    maxWarnings = 0
+}
