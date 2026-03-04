@@ -22,7 +22,7 @@ public class Tag extends BaseEntity {
 
     // Required by JPA
     public Tag() {
-        
+        // Required by JPA
     }
     @Column(nullable = false, unique = true, length = 100)
     private String name;

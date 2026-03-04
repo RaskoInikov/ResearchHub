@@ -36,6 +36,6 @@ public class Review extends BaseEntity {
 
     // Required by JPA
     public Review() {
-        
+        // Required by JPA
     }
 }

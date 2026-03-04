@@ -33,6 +33,6 @@ public class Comment extends BaseEntity {
 
     // Required by JPA
     public Comment() {
-        
+        // Required by JPA
     }
 }

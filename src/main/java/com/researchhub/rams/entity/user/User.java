@@ -45,6 +45,6 @@ public class User extends BaseEntity {
 
     // Required by JPA
     public User() {
-        
+        // Required by JPA
     }
 }

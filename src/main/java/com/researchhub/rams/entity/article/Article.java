@@ -79,6 +79,6 @@ public class Article extends BaseEntity {
 
     // Required by JPA
     public Article() {
-        
+        // Required by JPA
     }
 }

@@ -35,6 +35,6 @@ public class ArticleTag extends BaseEntity {
 
     // Required by JPA
     public ArticleTag() {
-        
+        // Required by JPA
     }
 }
