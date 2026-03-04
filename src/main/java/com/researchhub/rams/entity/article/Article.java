@@ -49,12 +49,10 @@ public class Article extends BaseEntity {
     @Column(columnDefinition = "TIMESTAMPTZ")
     private Instant publicationDate;
 
-    // MANY ARTICLES → ONE USER
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "author_id", nullable = false)
     private User author;
 
-    // ONE ARTICLE → MANY COMMENTS
     @OneToMany(
             mappedBy = "article",
             cascade = CascadeType.ALL,
@@ -63,7 +61,6 @@ public class Article extends BaseEntity {
     )
     private Set<Comment> comments = new HashSet<>();
 
-    // ONE ARTICLE → MANY REVIEWS
     @OneToMany(
             mappedBy = "article",
             cascade = CascadeType.ALL,
@@ -72,7 +69,6 @@ public class Article extends BaseEntity {
     )
     private Set<Review> reviews = new HashSet<>();
 
-    // MANY TO MANY via join entity
     @OneToMany(
             mappedBy = "article",
             cascade = CascadeType.ALL,
@@ -81,6 +77,7 @@ public class Article extends BaseEntity {
     )
     private Set<ArticleTag> articleTags = new HashSet<>();
 
+    // Required by JPA
     public Article() {
         
     }

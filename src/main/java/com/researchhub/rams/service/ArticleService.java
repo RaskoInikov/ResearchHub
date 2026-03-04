@@ -13,10 +13,10 @@ import com.researchhub.rams.entity.article.Article;
 import com.researchhub.rams.entity.article.ArticleStatus;
 import com.researchhub.rams.entity.comment.Comment;
 import com.researchhub.rams.entity.user.User;
+import com.researchhub.rams.exceptions.TransactionSimulationException;
 import com.researchhub.rams.mapper.article.ArticleMapper;
 import com.researchhub.rams.repository.ArticleRepository;
 import com.researchhub.rams.repository.CommentRepository;
-import com.researchhub.rams.repository.ReviewRepository;
 import com.researchhub.rams.repository.UserRepository;
 
 
@@ -32,7 +32,6 @@ public class ArticleService {
             ArticleRepository articleRepository,
             UserRepository userRepository,
             CommentRepository commentRepository,
-            ReviewRepository reviewRepository,
             ArticleMapper mapper) {
 
         this.articleRepository = articleRepository;
@@ -130,7 +129,7 @@ public class ArticleService {
         commentRepository.save(comment);
 
         if (true) {
-            throw new RuntimeException("Simulated failure");
+            throw new TransactionSimulationException("Simulated failure");
         }
     }
 
@@ -147,14 +146,14 @@ public class ArticleService {
         articleRepository.save(article);
 
         Comment comment = new Comment();
-        comment.setText("First comment");
+        comment.setText("Transactional comment");
         comment.setArticle(article);
         comment.setAuthor(author);
 
         commentRepository.save(comment);
 
         if (true) {
-            throw new RuntimeException("Simulated failure");
+            throw new TransactionSimulationException("Simulated failure");
         }
     }
 }

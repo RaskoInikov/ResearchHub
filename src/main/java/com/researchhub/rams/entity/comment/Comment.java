@@ -31,6 +31,7 @@ public class Comment extends BaseEntity {
     @JoinColumn(name = "author_id", nullable = false)
     private User author;
 
+    // Required by JPA
     public Comment() {
         
     }

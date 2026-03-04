@@ -33,6 +33,7 @@ public class ArticleTag extends BaseEntity {
     @JoinColumn(name = "tag_id", nullable = false)
     private Tag tag;
 
+    // Required by JPA
     public ArticleTag() {
         
     }

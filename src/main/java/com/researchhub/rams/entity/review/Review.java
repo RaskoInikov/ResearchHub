@@ -34,6 +34,7 @@ public class Review extends BaseEntity {
     @JoinColumn(name = "reviewer_id", nullable = false)
     private User reviewer;
 
+    // Required by JPA
     public Review() {
         
     }

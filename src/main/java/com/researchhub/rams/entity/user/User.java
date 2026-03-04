@@ -43,6 +43,7 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "reviewer")
     private List<Review> reviews = new ArrayList<>();
 
+    // Required by JPA
     public User() {
         
     }

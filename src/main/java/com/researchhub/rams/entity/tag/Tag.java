@@ -20,8 +20,9 @@ import lombok.Setter;
 @Setter
 public class Tag extends BaseEntity {
 
+    // Required by JPA
     public Tag() {
-        // to do
+        
     }
     @Column(nullable = false, unique = true, length = 100)
     private String name;
