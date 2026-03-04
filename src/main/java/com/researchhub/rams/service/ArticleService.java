@@ -19,7 +19,6 @@ import com.researchhub.rams.repository.ArticleRepository;
 import com.researchhub.rams.repository.CommentRepository;
 import com.researchhub.rams.repository.UserRepository;
 
-
 @Service
 public class ArticleService {
 
@@ -40,7 +39,6 @@ public class ArticleService {
         this.mapper = mapper;
     }
 
-
     @Transactional(readOnly = true)
     public List<ArticleResponseDto> getAll() {
         return articleRepository.findAll()
@@ -51,34 +49,26 @@ public class ArticleService {
 
     @Transactional(readOnly = true)
     public ArticleResponseDto getById(UUID id) {
-        return mapper.toResponse(
-                articleRepository.findById(id).orElseThrow()
-        );
+        return mapper.toResponse(findArticle(id));
     }
 
     @Transactional(readOnly = true)
     public List<ArticleResponseDto> getByTitle(String title) {
-        return articleRepository.findByTitle(title).stream().map(mapper::toResponse).toList();
+        return articleRepository.findByTitle(title)
+                .stream()
+                .map(mapper::toResponse)
+                .toList();
     }
 
     public ArticleResponseDto create(ArticleRequestDto dto) {
-
-        User author = userRepository.findById(dto.getAuthorId())
-                .orElseThrow();
-
-        Article article = mapper.toEntity(dto);
-        article.setAuthor(author);
-        article.setStatus(ArticleStatus.DRAFT);
-
+        User author = findUser(dto.getAuthorId());
+        Article article = buildArticle(dto, author);
         return mapper.toResponse(articleRepository.save(article));
     }
 
     public ArticleResponseDto update(UUID id, ArticleUpdateDto dto) {
-
-        Article article = articleRepository.findById(id).orElseThrow();
-
+        Article article = findArticle(id);
         mapper.updateEntity(article, dto);
-
         return mapper.toResponse(articleRepository.save(article));
     }
 
@@ -88,72 +78,54 @@ public class ArticleService {
 
     @Transactional(readOnly = true)
     public List<ArticleResponseDto> getAllWithNPlusOne() {
-
         List<Article> articles = articleRepository.findAll();
-
-        for (Article article : articles) {
-            article.getComments().size();
-        }
-
-        return articles.stream()
-                .map(mapper::toResponse)
-                .toList();
+        articles.forEach(a -> a.getComments().size());
+        return articles.stream().map(mapper::toResponse).toList();
     }
 
     @Transactional(readOnly = true)
     public List<ArticleResponseDto> getAllOptimized() {
-
-        List<Article> articles = articleRepository.findAllWithRelations();
-
-        return articles.stream()
+        return articleRepository.findAllWithRelations()
+                .stream()
                 .map(mapper::toResponse)
                 .toList();
     }
 
     public void createArticleWithRelationsNoTransaction(ArticleRequestDto dto) {
-
-        User author = userRepository.findById(dto.getAuthorId())
-                .orElseThrow();
-
-        Article article = mapper.toEntity(dto);
-        article.setAuthor(author);
-        article.setStatus(ArticleStatus.DRAFT);
-
-        articleRepository.save(article);
-
-        Comment comment = new Comment();
-        comment.setText("First comment");
-        comment.setArticle(article);
-        comment.setAuthor(author);
-
-        commentRepository.save(comment);
-
-        if (true) {
-            throw new TransactionSimulationException("Simulated failure");
-        }
+        User author = findUser(dto.getAuthorId());
+        Article article = articleRepository.save(buildArticle(dto, author));
+        commentRepository.save(buildComment("First comment", article, author));
+        throw new TransactionSimulationException("Simulated failure");
     }
 
     @Transactional
     public void createArticleWithRelationsTransactional(ArticleRequestDto dto) {
+        User author = findUser(dto.getAuthorId());
+        Article article = articleRepository.save(buildArticle(dto, author));
+        commentRepository.save(buildComment("Transactional comment", article, author));
+        throw new TransactionSimulationException("Simulated failure");
+    }
 
-        User author = userRepository.findById(dto.getAuthorId())
-                .orElseThrow();
+    private Article findArticle(UUID id) {
+        return articleRepository.findById(id).orElseThrow();
+    }
 
+    private User findUser(UUID id) {
+        return userRepository.findById(id).orElseThrow();
+    }
+
+    private Article buildArticle(ArticleRequestDto dto, User author) {
         Article article = mapper.toEntity(dto);
         article.setAuthor(author);
         article.setStatus(ArticleStatus.DRAFT);
+        return article;
+    }
 
-        articleRepository.save(article);
-
+    private Comment buildComment(String text, Article article, User author) {
         Comment comment = new Comment();
-        comment.setText("Transactional comment");
+        comment.setText(text);
         comment.setArticle(article);
         comment.setAuthor(author);
-
-        commentRepository.save(comment);
-
-        if (true) {
-            throw new TransactionSimulationException("Simulated failure");
-        }
+        return comment;
     }
 }
