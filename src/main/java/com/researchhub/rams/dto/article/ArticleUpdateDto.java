@@ -18,5 +18,7 @@ public class ArticleUpdateDto {
 
     private String content;
 
+    private String summary;
+
     private Instant publicationDate;
 }

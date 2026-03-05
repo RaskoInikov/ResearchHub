@@ -27,5 +27,7 @@ public class ArticleRequestDto {
     @NotNull
     private UUID authorId;
 
+    private String summary;
+
     private Instant publicationDate;
 }

@@ -27,6 +27,7 @@ public class ArticleMapper {
         article.setTitle(dto.getTitle());
         article.setAbstractText(dto.getAbstractText());
         article.setContent(dto.getContent());
+        article.setSummary(dto.getSummary());
         article.setPublicationDate(dto.getPublicationDate());
         return article;
     }
@@ -40,6 +41,9 @@ public class ArticleMapper {
         }
         if (dto.getContent() != null) {
             article.setContent(dto.getContent());
+        }
+        if (dto.getSummary() != null) {
+            article.setSummary(dto.getSummary());
         }
         if (dto.getPublicationDate() != null) {
             article.setPublicationDate(dto.getPublicationDate());
