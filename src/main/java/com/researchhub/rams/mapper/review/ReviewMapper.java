@@ -16,7 +16,7 @@ public class ReviewMapper {
         dto.setScore(review.getScore());
         dto.setComment(review.getComment());
         dto.setArticleId(review.getArticle().getId());
-        dto.setReviewerId(review.getReviewer().getId());
+        dto.setReviewerId(review.getAuthor().getId());
         return dto;
     }
 

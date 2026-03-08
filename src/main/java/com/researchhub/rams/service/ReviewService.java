@@ -48,7 +48,7 @@ public class ReviewService {
 
         Review review = mapper.toEntity(dto);
         review.setArticle(article);
-        review.setReviewer(reviewer);
+        review.setAuthor(reviewer);
 
         return mapper.toResponse(reviewRepository.save(review));
     }

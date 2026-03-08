@@ -4,6 +4,9 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 import com.researchhub.rams.entity.BaseEntity;
 import com.researchhub.rams.entity.articletag.ArticleTag;
 import com.researchhub.rams.entity.comment.Comment;
@@ -43,7 +46,8 @@ public class Article extends BaseEntity {
     private String summary;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
+    @Column(nullable = false, columnDefinition = "article_status")
     private ArticleStatus status;
 
     @Column(columnDefinition = "TIMESTAMPTZ")

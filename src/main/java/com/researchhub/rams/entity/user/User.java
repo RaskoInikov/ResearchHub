@@ -40,7 +40,7 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "author")
     private List<Comment> comments = new ArrayList<>();
 
-    @OneToMany(mappedBy = "reviewer")
+    @OneToMany(mappedBy = "author")
     private List<Review> reviews = new ArrayList<>();
 
     // Required by JPA

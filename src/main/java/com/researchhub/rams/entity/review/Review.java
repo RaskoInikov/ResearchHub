@@ -32,7 +32,7 @@ public class Review extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "author_id", nullable = false)
-    private User reviewer;
+    private User author;
 
     // Required by JPA
     public Review() {
