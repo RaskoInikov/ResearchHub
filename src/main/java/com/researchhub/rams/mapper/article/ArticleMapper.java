@@ -48,5 +48,8 @@ public class ArticleMapper {
         if (dto.getPublicationDate() != null) {
             article.setPublicationDate(dto.getPublicationDate());
         }
+        if (dto.getStatus() != null) {
+            article.setStatus(dto.getStatus());
+        }
     }
 }

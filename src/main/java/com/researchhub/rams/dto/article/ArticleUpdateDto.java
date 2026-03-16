@@ -2,6 +2,8 @@ package com.researchhub.rams.dto.article;
 
 import java.time.Instant;
 
+import com.researchhub.rams.entity.article.ArticleStatus;
+
 import jakarta.validation.constraints.Size;
 
 import lombok.Getter;
@@ -21,4 +23,6 @@ public class ArticleUpdateDto {
     private String summary;
 
     private Instant publicationDate;
+
+    private ArticleStatus status;
 }

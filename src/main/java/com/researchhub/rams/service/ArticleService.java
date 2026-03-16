@@ -1,6 +1,5 @@
 package com.researchhub.rams.service;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -32,7 +31,7 @@ public class ArticleService {
     private final CommentRepository commentRepository;
     private final ArticleMapper mapper;
 
-    private final Map<QueryKey, Page<ArticleResponseDto>> cache = new HashMap<>();
+    private final Map<QueryKey, Page<ArticleResponseDto>> cache;
 
     private void invalidateCache() {
         cache.clear();
@@ -42,12 +41,14 @@ public class ArticleService {
             ArticleRepository articleRepository,
             UserRepository userRepository,
             CommentRepository commentRepository,
-            ArticleMapper mapper) {
+            ArticleMapper mapper,
+            Map<QueryKey, Page<ArticleResponseDto>> cache) {
 
         this.articleRepository = articleRepository;
         this.userRepository = userRepository;
         this.commentRepository = commentRepository;
         this.mapper = mapper;
+        this.cache = cache;
     }
 
     @Transactional(readOnly = true)
