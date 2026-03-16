@@ -1,19 +1,24 @@
 package com.researchhub.rams.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.researchhub.rams.cache.QueryKey;
 import com.researchhub.rams.dto.article.ArticleRequestDto;
 import com.researchhub.rams.dto.article.ArticleResponseDto;
 import com.researchhub.rams.dto.article.ArticleUpdateDto;
 import com.researchhub.rams.entity.article.Article;
-import com.researchhub.rams.entity.article.ArticleStatus;
 import com.researchhub.rams.entity.comment.Comment;
 import com.researchhub.rams.entity.user.User;
 import com.researchhub.rams.exceptions.TransactionSimulationException;
+import com.researchhub.rams.filter.ArticleFilter;
 import com.researchhub.rams.mapper.article.ArticleMapper;
 import com.researchhub.rams.repository.ArticleRepository;
 import com.researchhub.rams.repository.CommentRepository;
@@ -26,6 +31,12 @@ public class ArticleService {
     private final UserRepository userRepository;
     private final CommentRepository commentRepository;
     private final ArticleMapper mapper;
+
+    private final Map<QueryKey, Page<ArticleResponseDto>> cache = new HashMap<>();
+
+    private void invalidateCache() {
+        cache.clear();
+    }
 
     public ArticleService(
             ArticleRepository articleRepository,
@@ -63,17 +74,29 @@ public class ArticleService {
     public ArticleResponseDto create(ArticleRequestDto dto) {
         User author = findUser(dto.getAuthorId());
         Article article = buildArticle(dto, author);
-        return mapper.toResponse(articleRepository.save(article));
+
+        Article saved = articleRepository.save(article);
+
+        invalidateCache();
+
+        return mapper.toResponse(saved);
     }
 
     public ArticleResponseDto update(UUID id, ArticleUpdateDto dto) {
         Article article = findArticle(id);
+
         mapper.updateEntity(article, dto);
-        return mapper.toResponse(articleRepository.save(article));
+
+        Article saved = articleRepository.save(article);
+
+        invalidateCache();
+
+        return mapper.toResponse(saved);
     }
 
     public void delete(UUID id) {
         articleRepository.deleteById(id);
+        invalidateCache();
     }
 
     @Transactional(readOnly = true)
@@ -117,7 +140,7 @@ public class ArticleService {
     private Article buildArticle(ArticleRequestDto dto, User author) {
         Article article = mapper.toEntity(dto);
         article.setAuthor(author);
-        article.setStatus(ArticleStatus.DRAFT);
+        article.setStatus(dto.getStatus());
         return article;
     }
 
@@ -127,5 +150,57 @@ public class ArticleService {
         comment.setArticle(article);
         comment.setAuthor(author);
         return comment;
+    }
+
+    @Transactional(readOnly = true)
+    public Page<ArticleResponseDto> searchArticles(ArticleFilter filter, Pageable pageable) {
+
+        QueryKey key = new QueryKey(
+                filter.getAuthorName(),
+                filter.getStatus(),
+                pageable.getPageNumber(),
+                pageable.getPageSize()
+        );
+
+        if (cache.containsKey(key)) {
+            return cache.get(key);
+        }
+
+        Page<ArticleResponseDto> result =
+                articleRepository.searchArticles(
+                        filter.getAuthorName(),
+                        filter.getStatus(),
+                        pageable
+                ).map(mapper::toResponse);
+
+        cache.put(key, result);
+
+        return result;
+    }
+
+    @Transactional(readOnly = true)
+    public Page<ArticleResponseDto> searchArticlesNative(ArticleFilter filter, Pageable pageable) {
+
+        QueryKey key = new QueryKey(
+                filter.getAuthorName(),
+                filter.getStatus(),
+                pageable.getPageNumber(),
+                pageable.getPageSize()
+        );
+
+        if (cache.containsKey(key)) {
+            return cache.get(key);
+        }
+
+        Page<ArticleResponseDto> result =
+                articleRepository.searchArticlesNative(
+                        filter.getAuthorName(),
+                        filter.getStatus() != null ? filter.getStatus().name() : null,
+                        pageable
+                ).map(mapper::toResponse);
+
+        cache.put(key, result);
+
+        return result;
     }
 }

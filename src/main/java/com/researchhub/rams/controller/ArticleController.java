@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.researchhub.rams.dto.article.ArticleRequestDto;
 import com.researchhub.rams.dto.article.ArticleResponseDto;
 import com.researchhub.rams.dto.article.ArticleUpdateDto;
+import com.researchhub.rams.filter.ArticleFilter;
 import com.researchhub.rams.service.ArticleService;
 
 import jakarta.validation.Valid;
@@ -16,6 +17,8 @@ import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,7 +51,7 @@ public class ArticleController {
         return ResponseEntity.ok(service.getAll());
     }
 
-    @GetMapping("/search")
+    @GetMapping("/by-title")
     public ResponseEntity<List<ArticleResponseDto>> getByTitle(
             @RequestParam String title) {
         return ResponseEntity.ok(service.getByTitle(title));
@@ -91,5 +94,21 @@ public class ArticleController {
 
         service.createArticleWithRelationsTransactional(dto);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/search")
+    public Page<ArticleResponseDto> searchArticles(
+            ArticleFilter filter,
+            Pageable pageable
+    ) {
+        return service.searchArticles(filter, pageable);
+    }
+
+    @GetMapping("/search-native")
+    public Page<ArticleResponseDto> searchArticlesNative(
+            ArticleFilter filter,
+            Pageable pageable
+    ) {
+        return service.searchArticlesNative(filter, pageable);
     }
 }

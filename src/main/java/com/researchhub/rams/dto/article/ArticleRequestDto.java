@@ -3,6 +3,8 @@ package com.researchhub.rams.dto.article;
 import java.time.Instant;
 import java.util.UUID;
 
+import com.researchhub.rams.entity.article.ArticleStatus;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -30,4 +32,7 @@ public class ArticleRequestDto {
     private String summary;
 
     private Instant publicationDate;
+
+    @NotNull
+    private ArticleStatus status;
 }
