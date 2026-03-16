@@ -46,11 +46,6 @@ public class ArticleController {
             return ResponseEntity.ok(service.getById(id));
         }
 
-    @GetMapping
-    public ResponseEntity<List<ArticleResponseDto>> getAll() {
-        return ResponseEntity.ok(service.getAll());
-    }
-
     @GetMapping("/by-title")
     public ResponseEntity<List<ArticleResponseDto>> getByTitle(
             @RequestParam String title) {
@@ -69,32 +64,6 @@ public class ArticleController {
             service.delete(id);
             return ResponseEntity.noContent().build();
         }
-
-    @GetMapping("/n-plus-one")
-    public ResponseEntity<List<ArticleResponseDto>> getAllWithProblem() {
-        return ResponseEntity.ok(service.getAllWithNPlusOne());
-    }
-
-    @GetMapping("/optimized")
-    public ResponseEntity<List<ArticleResponseDto>> getAllOptimized() {
-        return ResponseEntity.ok(service.getAllOptimized());
-    }
-
-    @PostMapping("/demo-no-transaction")
-    public ResponseEntity<Void> demoNoTransaction(
-            @Valid @RequestBody ArticleRequestDto dto) {
-
-        service.createArticleWithRelationsNoTransaction(dto);
-        return ResponseEntity.ok().build();
-    }
-
-    @PostMapping("/demo-transaction")
-    public ResponseEntity<Void> demoTransaction(
-            @Valid @RequestBody ArticleRequestDto dto) {
-
-        service.createArticleWithRelationsTransactional(dto);
-        return ResponseEntity.ok().build();
-    }
 
     @GetMapping("/search")
     public Page<ArticleResponseDto> searchArticles(

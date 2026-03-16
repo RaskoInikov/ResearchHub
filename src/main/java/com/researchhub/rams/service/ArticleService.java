@@ -14,13 +14,10 @@ import com.researchhub.rams.dto.article.ArticleRequestDto;
 import com.researchhub.rams.dto.article.ArticleResponseDto;
 import com.researchhub.rams.dto.article.ArticleUpdateDto;
 import com.researchhub.rams.entity.article.Article;
-import com.researchhub.rams.entity.comment.Comment;
 import com.researchhub.rams.entity.user.User;
-import com.researchhub.rams.exceptions.TransactionSimulationException;
 import com.researchhub.rams.filter.ArticleFilter;
 import com.researchhub.rams.mapper.article.ArticleMapper;
 import com.researchhub.rams.repository.ArticleRepository;
-import com.researchhub.rams.repository.CommentRepository;
 import com.researchhub.rams.repository.UserRepository;
 
 @Service
@@ -28,7 +25,6 @@ public class ArticleService {
 
     private final ArticleRepository articleRepository;
     private final UserRepository userRepository;
-    private final CommentRepository commentRepository;
     private final ArticleMapper mapper;
 
     private final Map<QueryKey, Page<ArticleResponseDto>> cache;
@@ -40,23 +36,13 @@ public class ArticleService {
     public ArticleService(
             ArticleRepository articleRepository,
             UserRepository userRepository,
-            CommentRepository commentRepository,
             ArticleMapper mapper,
             Map<QueryKey, Page<ArticleResponseDto>> cache) {
 
         this.articleRepository = articleRepository;
         this.userRepository = userRepository;
-        this.commentRepository = commentRepository;
         this.mapper = mapper;
         this.cache = cache;
-    }
-
-    @Transactional(readOnly = true)
-    public List<ArticleResponseDto> getAll() {
-        return articleRepository.findAll()
-                .stream()
-                .map(mapper::toResponse)
-                .toList();
     }
 
     @Transactional(readOnly = true)
@@ -100,36 +86,6 @@ public class ArticleService {
         invalidateCache();
     }
 
-    @Transactional(readOnly = true)
-    public List<ArticleResponseDto> getAllWithNPlusOne() {
-        List<Article> articles = articleRepository.findAll();
-        articles.forEach(a -> a.getComments().size());
-        return articles.stream().map(mapper::toResponse).toList();
-    }
-
-    @Transactional(readOnly = true)
-    public List<ArticleResponseDto> getAllOptimized() {
-        return articleRepository.findAllWithRelations()
-                .stream()
-                .map(mapper::toResponse)
-                .toList();
-    }
-
-    public void createArticleWithRelationsNoTransaction(ArticleRequestDto dto) {
-        User author = findUser(dto.getAuthorId());
-        Article article = articleRepository.save(buildArticle(dto, author));
-        commentRepository.save(buildComment("First comment", article, author));
-        throw new TransactionSimulationException("Simulated failure");
-    }
-
-    @Transactional
-    public void createArticleWithRelationsTransactional(ArticleRequestDto dto) {
-        User author = findUser(dto.getAuthorId());
-        Article article = articleRepository.save(buildArticle(dto, author));
-        commentRepository.save(buildComment("Transactional comment", article, author));
-        throw new TransactionSimulationException("Simulated failure");
-    }
-
     private Article findArticle(UUID id) {
         return articleRepository.findById(id).orElseThrow();
     }
@@ -143,14 +99,6 @@ public class ArticleService {
         article.setAuthor(author);
         article.setStatus(dto.getStatus());
         return article;
-    }
-
-    private Comment buildComment(String text, Article article, User author) {
-        Comment comment = new Comment();
-        comment.setText(text);
-        comment.setArticle(article);
-        comment.setAuthor(author);
-        return comment;
     }
 
     @Transactional(readOnly = true)
