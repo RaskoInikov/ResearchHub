@@ -39,7 +39,7 @@ public class ArticleController {
         @Valid @RequestBody ArticleRequestDto dto) {
             return ResponseEntity.ok(service.create(dto));
     }
-
+    
     @GetMapping("/{id}")
     public ResponseEntity<ArticleResponseDto> getById(
         @PathVariable UUID id) {
