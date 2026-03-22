@@ -1,0 +1,398 @@
+2026-03-22 16:55:59 [Test worker] INFO  c.r.rams.RamsApplicationTests - Starting RamsApplicationTests using Java 21.0.10 with PID 552848 (started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 16:55:59 [Test worker] DEBUG c.r.rams.RamsApplicationTests - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 16:55:59 [Test worker] INFO  c.r.rams.RamsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 16:56:00 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 16:56:00 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2026-03-22 16:56:01 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 16:56:01 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 16:56:02 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f2dc407
+2026-03-22 16:56:02 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 16:56:03 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 16:56:03 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 16:56:03 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 16:56:03 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 16:56:05 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 16:56:06 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 16:56:06 [Test worker] INFO  c.r.rams.RamsApplicationTests - Started RamsApplicationTests in 7.105 seconds (process running for 8.337)
+2026-03-22 16:56:06 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 16:56:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 16:56:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 16:58:17 [Test worker] INFO  c.r.rams.RamsApplicationTests - Starting RamsApplicationTests using Java 21.0.10 with PID 555003 (started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 16:58:17 [Test worker] DEBUG c.r.rams.RamsApplicationTests - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 16:58:17 [Test worker] INFO  c.r.rams.RamsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 16:58:18 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 16:58:18 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 5 JPA repository interfaces.
+2026-03-22 16:58:19 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 16:58:19 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 16:58:19 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4769378c
+2026-03-22 16:58:19 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 16:58:20 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 16:58:20 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 16:58:20 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 16:58:21 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 16:58:22 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 16:58:23 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 16:58:23 [Test worker] INFO  c.r.rams.RamsApplicationTests - Started RamsApplicationTests in 6.887 seconds (process running for 8.181)
+2026-03-22 16:58:24 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 16:58:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 16:58:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 16:58:46 [Test worker] INFO  c.r.rams.RamsApplicationTests - Starting RamsApplicationTests using Java 21.0.10 with PID 556193 (started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 16:58:46 [Test worker] DEBUG c.r.rams.RamsApplicationTests - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 16:58:46 [Test worker] INFO  c.r.rams.RamsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 16:58:47 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 16:58:47 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces.
+2026-03-22 16:58:48 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 16:58:48 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 16:58:48 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5730b513
+2026-03-22 16:58:48 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 16:58:49 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 16:58:49 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 16:58:49 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 16:58:49 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 16:58:51 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 16:58:51 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 16:58:52 [Test worker] INFO  c.r.rams.RamsApplicationTests - Started RamsApplicationTests in 6.477 seconds (process running for 7.732)
+2026-03-22 16:58:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 16:58:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 16:58:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 16:59:04 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Starting RamsApplication using Java 21.0.10 with PID 556850 (/home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams/build/classes/java/main started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 16:59:04 [restartedMain] DEBUG c.researchhub.rams.RamsApplication - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 16:59:04 [restartedMain] INFO  c.researchhub.rams.RamsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 16:59:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 16:59:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 16:59:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 16:59:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2026-03-22 16:59:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 16:59:06 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-22 16:59:06 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 16:59:06 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-22 16:59:06 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-22 16:59:06 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1496 ms
+2026-03-22 16:59:06 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 16:59:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 16:59:06 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a13792f
+2026-03-22 16:59:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 16:59:07 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 16:59:07 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 16:59:07 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 16:59:08 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 16:59:08 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 16:59:09 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-03-22 16:59:09 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 16:59:09 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-22 16:59:09 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 16:59:09 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Started RamsApplication in 5.568 seconds (process running for 5.926)
+2026-03-22 17:00:10 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-22 17:00:10 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-22 17:00:10 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-22 17:00:11 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)']
+2026-03-22 17:00:53 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)']
+2026-03-22 17:01:25 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)']
+2026-03-22 17:01:59 [http-nio-8080-exec-1] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@5c72f149, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-22 17:01:59 [http-nio-8080-exec-1] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 137 ms
+2026-03-22 17:01:59 [http-nio-8080-exec-1] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-03-22 17:02:34 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 17:02:34 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 17:02:34 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 17:02:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 17:02:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 17:04:42 [Test worker] INFO  c.r.rams.RamsApplicationTests - Starting RamsApplicationTests using Java 21.0.10 with PID 562340 (started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 17:04:42 [Test worker] DEBUG c.r.rams.RamsApplicationTests - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 17:04:42 [Test worker] INFO  c.r.rams.RamsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 17:04:43 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 17:04:43 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 5 JPA repository interfaces.
+2026-03-22 17:04:44 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 17:04:44 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 17:04:44 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7aca299e
+2026-03-22 17:04:44 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 17:04:45 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 17:04:45 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 17:04:45 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 17:04:46 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 17:04:47 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 17:04:48 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 17:04:48 [Test worker] INFO  c.r.rams.RamsApplicationTests - Started RamsApplicationTests in 6.609 seconds (process running for 7.868)
+2026-03-22 17:04:48 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 17:04:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 17:04:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 17:05:09 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Starting RamsApplication using Java 21.0.10 with PID 563151 (/home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams/build/classes/java/main started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 17:05:09 [restartedMain] DEBUG c.researchhub.rams.RamsApplication - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 17:05:09 [restartedMain] INFO  c.researchhub.rams.RamsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 17:05:09 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 17:05:09 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 17:05:10 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 17:05:10 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 5 JPA repository interfaces.
+2026-03-22 17:05:11 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 17:05:11 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-22 17:05:11 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 17:05:11 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-22 17:05:11 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-22 17:05:11 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1571 ms
+2026-03-22 17:05:11 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 17:05:11 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 17:05:11 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5703c505
+2026-03-22 17:05:11 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 17:05:12 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 17:05:12 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 17:05:12 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 17:05:13 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 17:05:14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 17:05:14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-03-22 17:05:14 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 17:05:14 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-22 17:05:14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 17:05:14 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Started RamsApplication in 5.638 seconds (process running for 5.966)
+2026-03-22 17:05:22 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-22 17:05:22 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-22 17:05:22 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-22 17:05:23 [http-nio-8080-exec-5] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 506 ms
+2026-03-22 17:06:08 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 17:06:08 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 17:06:08 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 17:06:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 17:06:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 18:26:41 [Test worker] INFO  c.r.rams.RamsApplicationTests - Starting RamsApplicationTests using Java 21.0.10 with PID 569935 (started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 18:26:41 [Test worker] DEBUG c.r.rams.RamsApplicationTests - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 18:26:41 [Test worker] INFO  c.r.rams.RamsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 18:26:42 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 18:26:42 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+2026-03-22 18:26:43 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 18:26:43 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 18:26:43 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7aca299e
+2026-03-22 18:26:43 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 18:26:44 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 18:26:44 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 18:26:44 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:26:45 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 18:26:46 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 18:26:47 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 18:26:47 [Test worker] INFO  c.r.rams.RamsApplicationTests - Started RamsApplicationTests in 6.81 seconds (process running for 8.171)
+2026-03-22 18:26:47 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:26:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 18:26:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 18:35:43 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Starting RamsApplication using Java 21.0.10 with PID 576389 (/home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams/build/classes/java/main started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 18:35:43 [restartedMain] DEBUG c.researchhub.rams.RamsApplication - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 18:35:43 [restartedMain] INFO  c.researchhub.rams.RamsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 18:35:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 18:35:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 18:35:44 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 18:35:44 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 5 JPA repository interfaces.
+2026-03-22 18:35:45 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 18:35:45 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-22 18:35:45 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 18:35:45 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-22 18:35:45 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-22 18:35:45 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1729 ms
+2026-03-22 18:35:45 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 18:35:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 18:35:45 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7e479980
+2026-03-22 18:35:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 18:35:46 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 18:35:46 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 18:35:46 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:35:47 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 18:35:47 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 18:35:48 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-03-22 18:35:48 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 18:35:48 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-22 18:35:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 18:35:48 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Started RamsApplication in 5.87 seconds (process running for 6.203)
+2026-03-22 18:35:49 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-22 18:35:49 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-22 18:35:49 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-22 18:35:50 [http-nio-8080-exec-2] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@48f8dd57, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-22 18:35:50 [http-nio-8080-exec-2] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 137 ms
+2026-03-22 18:35:50 [http-nio-8080-exec-2] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-03-22 18:35:54 [http-nio-8080-exec-3] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@6dae287, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-22 18:35:54 [http-nio-8080-exec-3] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 2 ms
+2026-03-22 18:35:58 [http-nio-8080-exec-4] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@43aaee1a, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-22 18:35:58 [http-nio-8080-exec-4] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 1 ms
+2026-03-22 18:36:21 [http-nio-8080-exec-5] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a9, com.researchhub.rams.dto.article.ArticleUpdateDto@56b56390]
+2026-03-22 18:36:21 [http-nio-8080-exec-5] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.update() - 70 ms
+2026-03-22 18:37:44 [http-nio-8080-exec-8] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@48f4f300, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-22 18:37:44 [http-nio-8080-exec-8] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 5 ms
+2026-03-22 18:37:48 [http-nio-8080-exec-9] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@23985d92, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-22 18:37:48 [http-nio-8080-exec-9] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 0 ms
+2026-03-22 18:37:55 [http-nio-8080-exec-10] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticlesNative() with args = [com.researchhub.rams.filter.ArticleFilter@454c9bbe, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-22 18:37:55 [http-nio-8080-exec-10] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticlesNative() - 1 ms
+2026-03-22 18:37:59 [http-nio-8080-exec-1] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticlesNative() with args = [com.researchhub.rams.filter.ArticleFilter@32fa6169, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-22 18:38:00 [http-nio-8080-exec-1] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticlesNative() - 35 ms
+2026-03-22 18:38:06 [http-nio-8080-exec-2] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@60b96d6a, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-22 18:38:06 [http-nio-8080-exec-2] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 1 ms
+2026-03-22 18:38:35 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.researchhub.rams.dto.article.ArticleResponseDto> com.researchhub.rams.controller.ArticleController.create(com.researchhub.rams.dto.article.ArticleRequestDto) with 5 errors: [Field error in object 'articleRequestDto' on field 'status': rejected value [null]; codes [NotNull.articleRequestDto.status,NotNull.status,NotNull.com.researchhub.rams.entity.article.ArticleStatus,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.status,status]; arguments []; default message [status]]; default message [Status is required]] [Field error in object 'articleRequestDto' on field 'title': rejected value []; codes [NotBlank.articleRequestDto.title,NotBlank.title,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.title,title]; arguments []; default message [title]]; default message [Title must not be blank]] [Field error in object 'articleRequestDto' on field 'abstractText': rejected value [null]; codes [NotBlank.articleRequestDto.abstractText,NotBlank.abstractText,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.abstractText,abstractText]; arguments []; default message [abstractText]]; default message [Abstract must not be blank]] [Field error in object 'articleRequestDto' on field 'authorId': rejected value [null]; codes [NotNull.articleRequestDto.authorId,NotNull.authorId,NotNull.java.util.UUID,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.authorId,authorId]; arguments []; default message [authorId]]; default message [AuthorId is required]] [Field error in object 'articleRequestDto' on field 'content': rejected value []; codes [NotBlank.articleRequestDto.content,NotBlank.content,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.content,content]; arguments []; default message [content]]; default message [Content must not be blank]] ]
+2026-03-22 18:39:03 [http-nio-8080-exec-5] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@36ea818]
+2026-03-22 18:39:03 [http-nio-8080-exec-5] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 5 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:39:04 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:39:18 [http-nio-8080-exec-7] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.getById() with args = [016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:39:18 [http-nio-8080-exec-7] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.getById() - 4 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:39:18 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:39:33 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; Invalid UUID string: 3]
+2026-03-22 18:39:41 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; Invalid UUID string: asde]
+2026-03-22 18:39:50 [http-nio-8080-exec-3] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.getById() with args = [016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:39:50 [http-nio-8080-exec-3] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.getById() - 3 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:39:50 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:39:53 [http-nio-8080-exec-5] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.getById() with args = [016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:39:53 [http-nio-8080-exec-5] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.getById() - 3 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:39:53 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:42:14 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; Invalid UUID string: dsfg]
+2026-03-22 18:45:05 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 18:45:05 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 18:45:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:45:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 18:45:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 18:45:11 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Starting RamsApplication using Java 21.0.10 with PID 584354 (/home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams/build/classes/java/main started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 18:45:11 [restartedMain] DEBUG c.researchhub.rams.RamsApplication - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 18:45:11 [restartedMain] INFO  c.researchhub.rams.RamsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 18:45:11 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 18:45:11 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 18:45:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 18:45:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2026-03-22 18:45:12 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 18:45:12 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-22 18:45:12 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 18:45:12 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-22 18:45:12 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-22 18:45:12 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1650 ms
+2026-03-22 18:45:13 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 18:45:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 18:45:13 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56caeff2
+2026-03-22 18:45:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 18:45:14 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 18:45:14 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 18:45:14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:45:14 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 18:45:15 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 18:45:16 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-03-22 18:45:16 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 18:45:16 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-22 18:45:16 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 18:45:16 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Started RamsApplication in 5.956 seconds (process running for 6.341)
+2026-03-22 18:45:36 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-22 18:45:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-22 18:45:37 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-03-22 18:45:37 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; Invalid UUID string: dsfg]
+2026-03-22 18:46:44 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; Invalid UUID string: dsfg]
+2026-03-22 18:46:51 [http-nio-8080-exec-8] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@7188bc52, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-22 18:46:51 [http-nio-8080-exec-8] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 109 ms
+2026-03-22 18:46:51 [http-nio-8080-exec-8] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-03-22 18:47:36 [http-nio-8080-exec-10] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@3ea62cae, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-22 18:47:36 [http-nio-8080-exec-10] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 1 ms
+2026-03-22 18:47:39 [http-nio-8080-exec-6] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@2e7042c3, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-22 18:47:39 [http-nio-8080-exec-6] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 1 ms
+2026-03-22 18:47:40 [http-nio-8080-exec-9] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@43fcd4db, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-22 18:47:40 [http-nio-8080-exec-9] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 1 ms
+2026-03-22 18:47:49 [http-nio-8080-exec-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 440 ms
+2026-03-22 18:50:32 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 18:50:32 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 18:50:32 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:50:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 18:50:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 18:53:08 [Test worker] INFO  c.r.rams.RamsApplicationTests - Starting RamsApplicationTests using Java 21.0.10 with PID 591248 (started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 18:53:08 [Test worker] DEBUG c.r.rams.RamsApplicationTests - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 18:53:08 [Test worker] INFO  c.r.rams.RamsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 18:53:09 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 18:53:09 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 5 JPA repository interfaces.
+2026-03-22 18:53:10 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 18:53:10 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 18:53:10 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64a8d575
+2026-03-22 18:53:10 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 18:53:11 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 18:53:11 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 18:53:11 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:53:12 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 18:53:13 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 18:53:14 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 18:53:14 [Test worker] INFO  c.r.rams.RamsApplicationTests - Started RamsApplicationTests in 6.918 seconds (process running for 8.29)
+2026-03-22 18:53:14 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:53:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 18:53:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 18:53:36 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Starting RamsApplication using Java 21.0.10 with PID 592083 (/home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams/build/classes/java/main started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-22 18:53:36 [restartedMain] DEBUG c.researchhub.rams.RamsApplication - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-22 18:53:36 [restartedMain] INFO  c.researchhub.rams.RamsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 18:53:36 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 18:53:36 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 18:53:37 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 18:53:37 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2026-03-22 18:53:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 18:53:38 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-22 18:53:38 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 18:53:38 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-22 18:53:38 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-22 18:53:38 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1701 ms
+2026-03-22 18:53:38 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 18:53:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 18:53:38 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3c5ab26c
+2026-03-22 18:53:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 18:53:39 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-22 18:53:39 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-22 18:53:39 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:53:40 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 18:53:41 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 18:53:41 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-03-22 18:53:41 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-22 18:53:41 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-22 18:53:41 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 18:53:41 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Started RamsApplication in 5.968 seconds (process running for 6.28)
+2026-03-22 18:53:55 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-22 18:53:55 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-22 18:53:55 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-03-22 18:53:55 [http-nio-8080-exec-1] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@59624e42, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-22 18:53:55 [http-nio-8080-exec-1] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 119 ms
+2026-03-22 18:53:55 [http-nio-8080-exec-1] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-03-22 18:54:01 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.researchhub.rams.dto.article.ArticleResponseDto> com.researchhub.rams.controller.ArticleController.create(com.researchhub.rams.dto.article.ArticleRequestDto) with 5 errors: [Field error in object 'articleRequestDto' on field 'authorId': rejected value [null]; codes [NotNull.articleRequestDto.authorId,NotNull.authorId,NotNull.java.util.UUID,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.authorId,authorId]; arguments []; default message [authorId]]; default message [AuthorId is required]] [Field error in object 'articleRequestDto' on field 'title': rejected value []; codes [NotBlank.articleRequestDto.title,NotBlank.title,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.title,title]; arguments []; default message [title]]; default message [Title must not be blank]] [Field error in object 'articleRequestDto' on field 'content': rejected value []; codes [NotBlank.articleRequestDto.content,NotBlank.content,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.content,content]; arguments []; default message [content]]; default message [Content must not be blank]] [Field error in object 'articleRequestDto' on field 'status': rejected value [null]; codes [NotNull.articleRequestDto.status,NotNull.status,NotNull.com.researchhub.rams.entity.article.ArticleStatus,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.status,status]; arguments []; default message [status]]; default message [Status is required]] [Field error in object 'articleRequestDto' on field 'abstractText': rejected value [null]; codes [NotBlank.articleRequestDto.abstractText,NotBlank.abstractText,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.abstractText,abstractText]; arguments []; default message [abstractText]]; default message [Abstract must not be blank]] ]
+2026-03-22 18:54:08 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.researchhub.rams.dto.article.ArticleResponseDto> com.researchhub.rams.controller.ArticleController.create(com.researchhub.rams.dto.article.ArticleRequestDto) with 5 errors: [Field error in object 'articleRequestDto' on field 'authorId': rejected value [null]; codes [NotNull.articleRequestDto.authorId,NotNull.authorId,NotNull.java.util.UUID,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.authorId,authorId]; arguments []; default message [authorId]]; default message [AuthorId is required]] [Field error in object 'articleRequestDto' on field 'status': rejected value [null]; codes [NotNull.articleRequestDto.status,NotNull.status,NotNull.com.researchhub.rams.entity.article.ArticleStatus,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.status,status]; arguments []; default message [status]]; default message [Status is required]] [Field error in object 'articleRequestDto' on field 'content': rejected value []; codes [NotBlank.articleRequestDto.content,NotBlank.content,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.content,content]; arguments []; default message [content]]; default message [Content must not be blank]] [Field error in object 'articleRequestDto' on field 'title': rejected value []; codes [NotBlank.articleRequestDto.title,NotBlank.title,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.title,title]; arguments []; default message [title]]; default message [Title must not be blank]] [Field error in object 'articleRequestDto' on field 'abstractText': rejected value [null]; codes [NotBlank.articleRequestDto.abstractText,NotBlank.abstractText,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [articleRequestDto.abstractText,abstractText]; arguments []; default message [abstractText]]; default message [Abstract must not be blank]] ]
+2026-03-22 18:54:24 [http-nio-8080-exec-10] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.getById() with args = [016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:24 [http-nio-8080-exec-10] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.getById() - 19 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:24 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:37 [http-nio-8080-exec-7] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@3a0921ba]
+2026-03-22 18:54:37 [http-nio-8080-exec-7] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 5 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:37 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:41 [http-nio-8080-exec-9] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a9, com.researchhub.rams.dto.article.ArticleUpdateDto@3a99af25]
+2026-03-22 18:54:41 [http-nio-8080-exec-9] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.update() - 50 ms
+2026-03-22 18:54:45 [http-nio-8080-exec-8] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@47c348fb]
+2026-03-22 18:54:45 [http-nio-8080-exec-8] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 3 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:45 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:47 [http-nio-8080-exec-2] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@3b6ab7c9]
+2026-03-22 18:54:47 [http-nio-8080-exec-2] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 4 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:47 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:48 [http-nio-8080-exec-1] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@67dfaf21]
+2026-03-22 18:54:48 [http-nio-8080-exec-1] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 5 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:48 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:50 [http-nio-8080-exec-3] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@5d75ea8c]
+2026-03-22 18:54:50 [http-nio-8080-exec-3] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 4 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:50 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:55 [http-nio-8080-exec-6] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@134f5413]
+2026-03-22 18:54:55 [http-nio-8080-exec-6] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 4 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:55 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:56 [http-nio-8080-exec-5] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@2e7042c3]
+2026-03-22 18:54:56 [http-nio-8080-exec-5] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 5 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:56 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:54:57 [http-nio-8080-exec-4] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@b72421a]
+2026-03-22 18:54:57 [http-nio-8080-exec-4] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 3 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:54:57 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:55:01 [http-nio-8080-exec-10] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@62d34ddc]
+2026-03-22 18:55:01 [http-nio-8080-exec-10] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 3 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:55:01 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:55:02 [http-nio-8080-exec-7] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@55a48d39]
+2026-03-22 18:55:02 [http-nio-8080-exec-7] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 4 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:55:02 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:55:05 [http-nio-8080-exec-9] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.update() with args = [016fa29a-7915-4377-858b-0cbd8de727a0, com.researchhub.rams.dto.article.ArticleUpdateDto@3c175f2b]
+2026-03-22 18:55:05 [http-nio-8080-exec-9] ERROR c.r.rams.aspect.LoggingAspect - Exception in com.researchhub.rams.service.ArticleService.update() - 3 ms - message: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0
+2026-03-22 18:55:05 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.researchhub.rams.exceptions.ArticleNotFoundException: Article not found with id: 016fa29a-7915-4377-858b-0cbd8de727a0]
+2026-03-22 18:58:23 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 18:58:23 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 18:58:23 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 18:58:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 18:58:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -15,6 +15,8 @@ import com.researchhub.rams.dto.article.ArticleResponseDto;
 import com.researchhub.rams.dto.article.ArticleUpdateDto;
 import com.researchhub.rams.entity.article.Article;
 import com.researchhub.rams.entity.user.User;
+import com.researchhub.rams.exceptions.ArticleNotFoundException;
+import com.researchhub.rams.exceptions.UserNotFoundException;
 import com.researchhub.rams.filter.ArticleFilter;
 import com.researchhub.rams.mapper.article.ArticleMapper;
 import com.researchhub.rams.repository.ArticleRepository;
@@ -87,11 +89,11 @@ public class ArticleService {
     }
 
     private Article findArticle(UUID id) {
-        return articleRepository.findById(id).orElseThrow();
+        return articleRepository.findById(id).orElseThrow(() -> new ArticleNotFoundException(id));
     }
 
     private User findUser(UUID id) {
-        return userRepository.findById(id).orElseThrow();
+        return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 
     private Article buildArticle(ArticleRequestDto dto, User author) {

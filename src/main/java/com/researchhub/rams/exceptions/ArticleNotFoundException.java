@@ -1,11 +1,15 @@
 package com.researchhub.rams.exceptions;
 
-public class ArticleNotFoundException extends RuntimeException {
-    public ArticleNotFoundException(Long id) {
-        super("Article not found with id: " + id);
+import org.springframework.http.HttpStatus;
+import java.util.UUID;
+
+public class ArticleNotFoundException extends ApiException {
+
+    public ArticleNotFoundException(UUID id) {
+        super(HttpStatus.NOT_FOUND, "Article not found with id: " + id);
     }
 
     public ArticleNotFoundException(String title) {
-        super("Article not found with title: " + title);
+        super(HttpStatus.NOT_FOUND, "Article not found with title: " + title);
     }
 }

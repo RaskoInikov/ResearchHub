@@ -12,6 +12,9 @@ import com.researchhub.rams.dto.comment.CommentResponseDto;
 import com.researchhub.rams.dto.comment.CommentUpdateDto;
 import com.researchhub.rams.entity.article.Article;
 import com.researchhub.rams.entity.user.User;
+import com.researchhub.rams.exceptions.ArticleNotFoundException;
+import com.researchhub.rams.exceptions.CommentNotFoundException;
+import com.researchhub.rams.exceptions.UserNotFoundException;
 import com.researchhub.rams.mapper.comment.CommentMapper;
 import com.researchhub.rams.repository.ArticleRepository;
 import com.researchhub.rams.repository.CommentRepository;
@@ -41,10 +44,10 @@ public class CommentService {
     public CommentResponseDto create(CommentRequestDto dto) {
 
         Article article = articleRepository.findById(dto.getArticleId())
-                .orElseThrow();
+                .orElseThrow(() -> new ArticleNotFoundException(dto.getArticleId()));
 
         User author = userRepository.findById(dto.getAuthorId())
-                .orElseThrow();
+                .orElseThrow(() -> new UserNotFoundException(dto.getAuthorId()));
 
         Comment comment = mapper.toEntity(dto);
         comment.setArticle(article);
@@ -55,7 +58,7 @@ public class CommentService {
 
     @Transactional(readOnly = true)
     public CommentResponseDto getById(UUID id) {
-        return mapper.toResponse(commentRepository.findById(id).orElseThrow());
+        return mapper.toResponse(commentRepository.findById(id).orElseThrow(() -> new CommentNotFoundException(id)));
     }
 
     @Transactional(readOnly = true)
