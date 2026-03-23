@@ -1,0 +1,107 @@
+2026-03-23 10:29:16 [Test worker] INFO  c.r.rams.RamsApplicationTests - Starting RamsApplicationTests using Java 21.0.10 with PID 661495 (started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-23 10:29:16 [Test worker] DEBUG c.r.rams.RamsApplicationTests - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-23 10:29:16 [Test worker] INFO  c.r.rams.RamsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 10:29:18 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-23 10:29:18 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 5 JPA repository interfaces.
+2026-03-23 10:29:19 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-23 10:29:19 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-23 10:29:19 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4da9da6c
+2026-03-23 10:29:19 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-23 10:29:20 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-23 10:29:20 [Test worker] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-23 10:29:20 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23 10:29:20 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-23 10:29:22 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 10:29:22 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-23 10:29:23 [Test worker] INFO  c.r.rams.RamsApplicationTests - Started RamsApplicationTests in 6.734 seconds (process running for 7.938)
+2026-03-23 10:29:23 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23 10:29:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-23 10:29:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-23 10:29:47 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Starting RamsApplication using Java 21.0.10 with PID 662324 (/home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams/build/classes/java/main started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-23 10:29:47 [restartedMain] DEBUG c.researchhub.rams.RamsApplication - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-23 10:29:47 [restartedMain] INFO  c.researchhub.rams.RamsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 10:29:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-23 10:29:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-23 10:29:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-23 10:29:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2026-03-23 10:29:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-23 10:29:49 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-23 10:29:49 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 10:29:49 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-23 10:29:49 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 10:29:49 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1546 ms
+2026-03-23 10:29:49 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-23 10:29:49 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-23 10:29:49 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56caeff2
+2026-03-23 10:29:49 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-23 10:29:50 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-23 10:29:50 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-23 10:29:50 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23 10:29:51 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-23 10:29:52 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 10:29:52 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-03-23 10:29:52 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-23 10:29:52 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-23 10:29:52 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-23 10:29:52 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Started RamsApplication in 5.82 seconds (process running for 6.158)
+2026-03-23 10:32:56 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-23 10:32:56 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-23 10:32:56 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-23 10:32:56 [http-nio-8080-exec-2] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@4829259f, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-23 10:32:56 [http-nio-8080-exec-2] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 100 ms
+2026-03-23 10:32:57 [http-nio-8080-exec-2] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-03-23 10:33:02 [http-nio-8080-exec-3] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@48f4f300, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-23 10:33:02 [http-nio-8080-exec-3] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 1 ms
+2026-03-23 10:33:08 [http-nio-8080-exec-4] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@23985d92, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-23 10:33:08 [http-nio-8080-exec-4] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 7 ms
+2026-03-23 10:33:16 [http-nio-8080-exec-5] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticlesNative() with args = [com.researchhub.rams.filter.ArticleFilter@454c9bbe, Page request [number: 0, size 4, sort: UNSORTED]]
+2026-03-23 10:33:16 [http-nio-8080-exec-5] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticlesNative() - 1 ms
+2026-03-23 10:33:21 [http-nio-8080-exec-8] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticlesNative() with args = [com.researchhub.rams.filter.ArticleFilter@731a1c63, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-23 10:33:21 [http-nio-8080-exec-8] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticlesNative() - 0 ms
+2026-03-23 10:33:26 [http-nio-8080-exec-10] INFO  c.r.rams.aspect.LoggingAspect - Enter: com.researchhub.rams.service.ArticleService.searchArticles() with args = [com.researchhub.rams.filter.ArticleFilter@2ddc04a0, Page request [number: 0, size 3, sort: UNSORTED]]
+2026-03-23 10:33:26 [http-nio-8080-exec-10] INFO  c.r.rams.aspect.LoggingAspect - Exit: com.researchhub.rams.service.ArticleService.searchArticles() - 1 ms
+2026-03-23 10:34:31 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-23 10:34:31 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-23 10:34:31 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23 10:34:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-23 10:34:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-23 10:34:35 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Starting RamsApplication using Java 21.0.10 with PID 666619 (/home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams/build/classes/java/main started by kheilikdzmitry in /home/kheilikdzmitry/VSCodeFolder/JavaSpring/ResearchHub/rams)
+2026-03-23 10:34:35 [restartedMain] DEBUG c.researchhub.rams.RamsApplication - Running with Spring Boot v3.5.12, Spring v6.2.17
+2026-03-23 10:34:35 [restartedMain] INFO  c.researchhub.rams.RamsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 10:34:36 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-23 10:34:36 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-23 10:34:37 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-23 10:34:37 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 5 JPA repository interfaces.
+2026-03-23 10:34:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-23 10:34:37 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-23 10:34:37 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 10:34:37 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-23 10:34:37 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 10:34:37 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1799 ms
+2026-03-23 10:34:38 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-23 10:34:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-23 10:34:38 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7e479980
+2026-03-23 10:34:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-23 10:34:39 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-03-23 10:34:39 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - drop cascades to 2 other objects
+2026-03-23 10:34:39 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23 10:34:39 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-23 10:34:40 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 10:34:41 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-03-23 10:34:41 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-23 10:34:41 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-23 10:34:41 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-23 10:34:41 [restartedMain] INFO  c.researchhub.rams.RamsApplication - Started RamsApplication in 6.206 seconds (process running for 6.538)
+2026-03-23 10:36:03 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-23 10:36:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-23 10:36:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-03-23 10:36:04 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 579 ms
+2026-03-23 10:36:09 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-03-23 10:37:26 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-23 10:37:26 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-23 10:37:26 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23 10:37:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-23 10:37:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

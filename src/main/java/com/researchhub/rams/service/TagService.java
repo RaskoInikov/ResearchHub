@@ -10,6 +10,7 @@ import com.researchhub.rams.dto.tag.TagRequestDto;
 import com.researchhub.rams.dto.tag.TagResponseDto;
 import com.researchhub.rams.dto.tag.TagUpdateDto;
 import com.researchhub.rams.entity.tag.Tag;
+import com.researchhub.rams.exceptions.TagNotFoundException;
 import com.researchhub.rams.mapper.tag.TagMapper;
 import com.researchhub.rams.repository.TagRepository;
 
@@ -49,7 +50,7 @@ public class TagService {
 
     public TagResponseDto update(UUID id, TagUpdateDto dto) {
 
-        Tag tag = repository.findById(id).orElseThrow();
+        Tag tag = repository.findById(id).orElseThrow(() -> new TagNotFoundException(id));
 
         mapper.updateEntity(tag, dto);
 

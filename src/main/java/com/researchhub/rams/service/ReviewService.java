@@ -12,6 +12,9 @@ import com.researchhub.rams.dto.review.ReviewResponseDto;
 import com.researchhub.rams.dto.review.ReviewUpdateDto;
 import com.researchhub.rams.entity.article.Article;
 import com.researchhub.rams.entity.user.User;
+import com.researchhub.rams.exceptions.ArticleNotFoundException;
+import com.researchhub.rams.exceptions.ReviewNotFoundException;
+import com.researchhub.rams.exceptions.UserNotFoundException;
 import com.researchhub.rams.mapper.review.ReviewMapper;
 import com.researchhub.rams.repository.ArticleRepository;
 import com.researchhub.rams.repository.ReviewRepository;
@@ -41,10 +44,10 @@ public class ReviewService {
     public ReviewResponseDto create(ReviewRequestDto dto) {
 
         Article article = articleRepository.findById(dto.getArticleId())
-                .orElseThrow();
+                .orElseThrow(() -> new ArticleNotFoundException(dto.getArticleId()));
 
         User reviewer = userRepository.findById(dto.getReviewerId())
-                .orElseThrow();
+                .orElseThrow(() -> new UserNotFoundException(dto.getReviewerId()));
 
         Review review = mapper.toEntity(dto);
         review.setArticle(article);
@@ -55,7 +58,7 @@ public class ReviewService {
 
     @Transactional(readOnly = true)
     public ReviewResponseDto getById(UUID id) {
-        return mapper.toResponse(reviewRepository.findById(id).orElseThrow());
+        return mapper.toResponse(reviewRepository.findById(id).orElseThrow(() -> new ReviewNotFoundException(id)));
     }
 
     @Transactional(readOnly = true)

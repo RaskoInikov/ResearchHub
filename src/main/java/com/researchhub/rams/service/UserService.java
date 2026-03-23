@@ -10,6 +10,7 @@ import com.researchhub.rams.dto.user.UserRequestDto;
 import com.researchhub.rams.dto.user.UserResponseDto;
 import com.researchhub.rams.dto.user.UserUpdateDto;
 import com.researchhub.rams.entity.user.User;
+import com.researchhub.rams.exceptions.UserNotFoundException;
 import com.researchhub.rams.mapper.user.UserMapper;
 import com.researchhub.rams.repository.UserRepository;
 
@@ -31,7 +32,7 @@ public class UserService {
 
     @Transactional(readOnly = true)
     public UserResponseDto getById(UUID id) {
-        return mapper.toResponse(repository.findById(id).orElseThrow());
+        return mapper.toResponse(repository.findById(id).orElseThrow(() -> new UserNotFoundException(id)));
     }
 
     @Transactional(readOnly = true)
@@ -49,7 +50,7 @@ public class UserService {
 
     public UserResponseDto update(UUID id, UserUpdateDto dto) {
 
-        User user = repository.findById(id).orElseThrow();
+        User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
 
         mapper.updateEntity(user, dto);
 
