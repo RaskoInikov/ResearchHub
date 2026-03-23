@@ -1,6 +1,7 @@
 package com.researchhub.rams.exceptions;
 
 import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 
@@ -17,8 +18,11 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+    private static final String FIELD_MESSAGE = "message";
+    private static final String FIELD_ERRORS = "errors";
+
     @ExceptionHandler(ApiException.class)
-    public ResponseEntity<?> handleApiException(
+    public ResponseEntity<Map<String, Object>> handleApiException(
             ApiException ex,
             HttpServletRequest request) {
 
@@ -26,7 +30,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<?> handleValidation(
+    public ResponseEntity<Map<String, Object>> handleValidation(
             MethodArgumentNotValidException ex,
             HttpServletRequest request) {
 
@@ -40,14 +44,14 @@ public class GlobalExceptionHandler {
                         err.getDefaultMessage()
                 ));
 
-        body.put("message", "Validation failed");
-        body.put("errors", errors);
+        body.put(FIELD_MESSAGE, "Validation failed");
+        body.put(FIELD_ERRORS, errors);
 
         return ResponseEntity.badRequest().body(body);
     }
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    public ResponseEntity<?> handleTypeMismatch(
+    public ResponseEntity<Map<String, Object>> handleTypeMismatch(
             MethodArgumentTypeMismatchException ex,
             HttpServletRequest request) {
 
@@ -55,7 +59,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<?> handleInvalidJson(
+    public ResponseEntity<Map<String, Object>> handleInvalidJson(
             HttpMessageNotReadableException ex,
             HttpServletRequest request) {
 
@@ -63,7 +67,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleAll(
+    public ResponseEntity<Map<String, Object>> handleAll(
             Exception ex,
             HttpServletRequest request) {
 
@@ -76,7 +80,7 @@ public class GlobalExceptionHandler {
             HttpServletRequest request) {
 
         Map<String, Object> body = baseBody(status.value(), request);
-        body.put("message", message);
+        body.put(FIELD_MESSAGE, message);
 
         return ResponseEntity.status(status).body(body);
     }
@@ -87,12 +91,13 @@ public class GlobalExceptionHandler {
             HttpServletRequest request) {
 
         Map<String, Object> body = baseBody(status, request);
-        body.put("message", message);
+        body.put(FIELD_MESSAGE, message);
 
         return ResponseEntity.status(status).body(body);
     }
 
     private Map<String, Object> baseBody(int status, HttpServletRequest request) {
+
         Map<String, Object> body = new HashMap<>();
 
         body.put("timestamp", Instant.now());
