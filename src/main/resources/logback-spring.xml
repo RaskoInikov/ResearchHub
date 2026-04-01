@@ -22,9 +22,9 @@
 
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 
-            <fileNamePattern>${LOG_PATH}/app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
 
-            <maxFileSize>10MB</maxFileSize>
+            <maxFileSize>32KB</maxFileSize>
 
             <maxHistory>30</maxHistory>
 
