@@ -16,6 +16,7 @@ import com.researchhub.rams.dto.article.ArticleUpdateDto;
 import com.researchhub.rams.entity.article.Article;
 import com.researchhub.rams.entity.user.User;
 import com.researchhub.rams.exceptions.ArticleNotFoundException;
+import com.researchhub.rams.exceptions.TransactionSimulationException;
 import com.researchhub.rams.exceptions.UserNotFoundException;
 import com.researchhub.rams.filter.ArticleFilter;
 import com.researchhub.rams.mapper.article.ArticleMapper;
@@ -153,5 +154,52 @@ public class ArticleService {
         cache.put(key, result);
 
         return result;
+    }
+
+    @Transactional
+    public List<ArticleResponseDto> createBulk(List<ArticleRequestDto> dtos) {
+
+        List<Article> articles = dtos.stream()
+                .map(dto -> {
+                    User author = findUser(dto.getAuthorId());
+                    return buildArticle(dto, author);
+                })
+                .toList();
+
+        List<Article> savedArticles = articleRepository.saveAll(articles);
+
+        invalidateCache();
+
+        return savedArticles.stream()
+                .map(mapper::toResponse)
+                .toList();
+    }
+
+    private List<ArticleResponseDto> createBulkInternal(List<ArticleRequestDto> dtos) {
+
+        invalidateCache();
+
+        return dtos.stream()
+                .map(dto -> userRepository.findById(dto.getAuthorId())
+                        .map(user -> buildArticle(dto, user))
+                        .orElseThrow(() -> new UserNotFoundException(dto.getAuthorId()))
+                )
+                .map(article -> {
+                    if ("FAIL".equalsIgnoreCase(article.getTitle())) {
+                        throw new TransactionSimulationException("Simulated failure during bulk operation");
+                    }
+                    return articleRepository.save(article);
+                })
+                .map(mapper::toResponse)
+                .toList();
+    }
+
+    @Transactional
+    public List<ArticleResponseDto> createBulkTrx(List<ArticleRequestDto> dtos) {
+        return createBulkInternal(dtos);
+    }
+
+    public List<ArticleResponseDto> createBulkNoTrx(List<ArticleRequestDto> dtos) {
+        return createBulkInternal(dtos);
     }
 }

@@ -95,4 +95,17 @@ public class ArticleController {
             Pageable pageable) {
         return service.searchArticlesNative(filter, pageable);
     }
+
+    @Operation(summary = "Create multiple articles (bulk, with/without transaction)")
+    @PostMapping("/bulk")
+    public ResponseEntity<List<ArticleResponseDto>> createBulk(
+            @Valid @RequestBody List<@Valid ArticleRequestDto> dtos,
+            @RequestParam("isTrx") boolean isTrx) {
+
+        List<ArticleResponseDto> result = isTrx
+                ? service.createBulkTrx(dtos)
+                : service.createBulkNoTrx(dtos);
+
+        return ResponseEntity.status(201).body(result);
+    }
 }
