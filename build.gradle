@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.3.5'
 	id 'io.spring.dependency-management' version '1.1.7'
 	id 'checkstyle'
+	id 'jacoco'
 }
 
 group = 'com.researchhub'
@@ -70,4 +71,22 @@ tasks.withType(Checkstyle) {
 tasks.withType(Checkstyle).configureEach {
     ignoreFailures = false
     maxWarnings = 0
+}
+
+jacoco {
+    toolVersion = "0.8.11"
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
