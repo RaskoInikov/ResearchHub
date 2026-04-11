@@ -22,6 +22,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -143,5 +144,27 @@ class CommentServiceTest {
     void deleteShouldCallRepository() {
         service.delete(commentId);
         verify(commentRepository).deleteById(commentId);
+    }
+
+    @Test
+    void getAllShouldReturnList() {
+        Comment comment = new Comment();
+        CommentResponseDto dto = new CommentResponseDto();
+
+        when(commentRepository.findAll()).thenReturn(List.of(comment));
+        when(mapper.toResponse(comment)).thenReturn(dto);
+
+        assertThat(service.getAll()).hasSize(1);
+    }
+
+    @Test
+    void getByArticleShouldReturnList() {
+        Comment comment = new Comment();
+        CommentResponseDto dto = new CommentResponseDto();
+
+        when(commentRepository.findByArticleId(articleId)).thenReturn(List.of(comment));
+        when(mapper.toResponse(comment)).thenReturn(dto);
+
+        assertThat(service.getByArticle(articleId)).hasSize(1);
     }
 }
