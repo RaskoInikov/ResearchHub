@@ -115,7 +115,9 @@ class UserServiceTest {
         UUID id = UUID.randomUUID();
         when(repository.findById(id)).thenReturn(Optional.empty());
 
-        Assertions.assertThatThrownBy(() -> service.update(id, new UserUpdateDto()))
+        UserUpdateDto dto = new UserUpdateDto();
+
+        Assertions.assertThatThrownBy(() -> service.update(id, dto))
                 .isInstanceOf(UserNotFoundException.class);
     }
 

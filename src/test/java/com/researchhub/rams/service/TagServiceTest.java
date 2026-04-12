@@ -115,7 +115,9 @@ class TagServiceTest {
         UUID id = UUID.randomUUID();
         when(repository.findById(id)).thenReturn(Optional.empty());
 
-        Assertions.assertThatThrownBy(() -> service.update(id, new TagUpdateDto()))
+        TagUpdateDto dto = new TagUpdateDto();
+
+        Assertions.assertThatThrownBy(() -> service.update(id, dto))
                 .isInstanceOf(TagNotFoundException.class);
     }
 

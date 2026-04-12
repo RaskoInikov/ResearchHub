@@ -145,7 +145,9 @@ class ArticleServiceTest {
     void createBulkShouldThrowIfUserNotFound() {
         when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-        Assertions.assertThatThrownBy(() -> service.createBulk(List.of(requestDto)))
+        List<ArticleRequestDto> input = List.of(requestDto);
+
+        Assertions.assertThatThrownBy(() -> service.createBulk(input))
                 .isInstanceOf(UserNotFoundException.class);
     }
 
@@ -251,7 +253,9 @@ class ArticleServiceTest {
 
         when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-        Assertions.assertThatThrownBy(() -> service.createBulkNoTrx(List.of(dto)))
+        List<ArticleRequestDto> input = List.of(dto);
+
+        Assertions.assertThatThrownBy(() -> service.createBulkNoTrx(input))
                 .isInstanceOf(UserNotFoundException.class);
     }
 
