@@ -13,24 +13,18 @@ import com.researchhub.rams.mapper.comment.CommentMapper;
 import com.researchhub.rams.repository.ArticleRepository;
 import com.researchhub.rams.repository.CommentRepository;
 import com.researchhub.rams.repository.UserRepository;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
-import static org.mockito.Mockito.when;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class CommentServiceTest {
@@ -87,7 +81,7 @@ class CommentServiceTest {
 
         CommentResponseDto result = service.create(requestDto);
 
-        assertThat(result).isEqualTo(responseDto);
+        Assertions.assertThat(result).isEqualTo(responseDto);
         verify(commentRepository).save(comment);
     }
 
@@ -95,7 +89,7 @@ class CommentServiceTest {
     void createShouldThrowIfArticleNotFound() {
         when(articleRepository.findById(articleId)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.create(requestDto))
+        Assertions.assertThatThrownBy(() -> service.create(requestDto))
                 .isInstanceOf(ArticleNotFoundException.class);
     }
 
@@ -104,7 +98,7 @@ class CommentServiceTest {
         when(articleRepository.findById(articleId)).thenReturn(Optional.of(article));
         when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.create(requestDto))
+        Assertions.assertThatThrownBy(() -> service.create(requestDto))
                 .isInstanceOf(UserNotFoundException.class);
     }
 
@@ -115,14 +109,14 @@ class CommentServiceTest {
 
         CommentResponseDto result = service.getById(commentId);
 
-        assertThat(result).isEqualTo(responseDto);
+        Assertions.assertThat(result).isEqualTo(responseDto);
     }
 
     @Test
     void getByIdShouldThrowIfNotFound() {
         when(commentRepository.findById(commentId)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.getById(commentId))
+        Assertions.assertThatThrownBy(() -> service.getById(commentId))
                 .isInstanceOf(CommentNotFoundException.class);
     }
 
@@ -136,7 +130,7 @@ class CommentServiceTest {
 
         CommentResponseDto result = service.update(commentId, dto);
 
-        assertThat(result).isEqualTo(responseDto);
+        Assertions.assertThat(result).isEqualTo(responseDto);
         verify(mapper).updateEntity(comment, dto);
     }
 
@@ -148,23 +142,23 @@ class CommentServiceTest {
 
     @Test
     void getAllShouldReturnList() {
-        Comment comment = new Comment();
+        Comment entity = new Comment();
         CommentResponseDto dto = new CommentResponseDto();
 
-        when(commentRepository.findAll()).thenReturn(List.of(comment));
-        when(mapper.toResponse(comment)).thenReturn(dto);
+        when(commentRepository.findAll()).thenReturn(List.of(entity));
+        when(mapper.toResponse(entity)).thenReturn(dto);
 
-        assertThat(service.getAll()).hasSize(1);
+        Assertions.assertThat(service.getAll()).hasSize(1);
     }
 
     @Test
     void getByArticleShouldReturnList() {
-        Comment comment = new Comment();
+        Comment entity = new Comment();
         CommentResponseDto dto = new CommentResponseDto();
 
-        when(commentRepository.findByArticleId(articleId)).thenReturn(List.of(comment));
-        when(mapper.toResponse(comment)).thenReturn(dto);
+        when(commentRepository.findByArticleId(articleId)).thenReturn(List.of(entity));
+        when(mapper.toResponse(entity)).thenReturn(dto);
 
-        assertThat(service.getByArticle(articleId)).hasSize(1);
+        Assertions.assertThat(service.getByArticle(articleId)).hasSize(1);
     }
 }

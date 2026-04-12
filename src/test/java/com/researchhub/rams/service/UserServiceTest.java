@@ -7,24 +7,19 @@ import com.researchhub.rams.entity.user.User;
 import com.researchhub.rams.exceptions.UserNotFoundException;
 import com.researchhub.rams.mapper.user.UserMapper;
 import com.researchhub.rams.repository.UserRepository;
-
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.verify;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {
@@ -47,7 +42,7 @@ class UserServiceTest {
         when(repository.save(user)).thenReturn(user);
         when(mapper.toResponse(user)).thenReturn(dto);
 
-        assertThat(service.create(new UserRequestDto())).isEqualTo(dto);
+        Assertions.assertThat(service.create(new UserRequestDto())).isEqualTo(dto);
     }
 
     @Test
@@ -59,28 +54,27 @@ class UserServiceTest {
         when(repository.findById(id)).thenReturn(Optional.of(user));
         when(mapper.toResponse(user)).thenReturn(dto);
 
-        assertThat(service.getById(id)).isEqualTo(dto);
+        Assertions.assertThat(service.getById(id)).isEqualTo(dto);
     }
 
     @Test
     void getByIdShouldThrow() {
         UUID id = UUID.randomUUID();
-
         when(repository.findById(id)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.getById(id))
+        Assertions.assertThatThrownBy(() -> service.getById(id))
                 .isInstanceOf(UserNotFoundException.class);
     }
 
     @Test
     void getAllShouldReturnList() {
-        User user = new User();
+        User entity = new User();
         UserResponseDto dto = new UserResponseDto();
 
-        when(repository.findAll()).thenReturn(List.of(user));
-        when(mapper.toResponse(user)).thenReturn(dto);
+        when(repository.findAll()).thenReturn(List.of(entity));
+        when(mapper.toResponse(entity)).thenReturn(dto);
 
-        assertThat(service.getAll()).hasSize(1);
+        Assertions.assertThat(service.getAll()).hasSize(1);
     }
 
     @Test
@@ -91,14 +85,14 @@ class UserServiceTest {
         when(repository.findByEmail("test@mail.com")).thenReturn(Optional.of(user));
         when(mapper.toResponse(user)).thenReturn(dto);
 
-        assertThat(service.getByEmail("test@mail.com")).isEqualTo(dto);
+        Assertions.assertThat(service.getByEmail("test@mail.com")).isEqualTo(dto);
     }
 
     @Test
     void getByEmailShouldThrow() {
         when(repository.findByEmail("test@mail.com")).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.getByEmail("test@mail.com"))
+        Assertions.assertThatThrownBy(() -> service.getByEmail("test@mail.com"))
                 .isInstanceOf(java.util.NoSuchElementException.class);
     }
 
@@ -112,26 +106,23 @@ class UserServiceTest {
         when(repository.save(user)).thenReturn(user);
         when(mapper.toResponse(user)).thenReturn(dto);
 
-        assertThat(service.update(id, new UserUpdateDto())).isEqualTo(dto);
+        Assertions.assertThat(service.update(id, new UserUpdateDto())).isEqualTo(dto);
         verify(mapper).updateEntity(eq(user), any());
-    }
-
-    @Test
-    void deleteShouldCallRepository() {
-        UUID id = UUID.randomUUID();
-
-        service.delete(id);
-
-        verify(repository).deleteById(id);
     }
 
     @Test
     void updateShouldThrowWhenUserNotFound() {
         UUID id = UUID.randomUUID();
-
         when(repository.findById(id)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.update(id, new UserUpdateDto()))
+        Assertions.assertThatThrownBy(() -> service.update(id, new UserUpdateDto()))
                 .isInstanceOf(UserNotFoundException.class);
+    }
+
+    @Test
+    void deleteShouldCallRepository() {
+        UUID id = UUID.randomUUID();
+        service.delete(id);
+        verify(repository).deleteById(id);
     }
 }

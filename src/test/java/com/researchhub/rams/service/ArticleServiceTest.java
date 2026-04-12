@@ -14,27 +14,21 @@ import com.researchhub.rams.filter.ArticleFilter;
 import com.researchhub.rams.mapper.article.ArticleMapper;
 import com.researchhub.rams.repository.ArticleRepository;
 import com.researchhub.rams.repository.UserRepository;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
@@ -90,7 +84,7 @@ class ArticleServiceTest {
         when(articleRepository.save(article)).thenReturn(article);
         when(mapper.toResponse(article)).thenReturn(responseDto);
 
-        assertThat(service.create(requestDto)).isEqualTo(responseDto);
+        Assertions.assertThat(service.create(requestDto)).isEqualTo(responseDto);
     }
 
     @Test
@@ -98,14 +92,14 @@ class ArticleServiceTest {
         when(articleRepository.findById(articleId)).thenReturn(Optional.of(article));
         when(mapper.toResponse(article)).thenReturn(responseDto);
 
-        assertThat(service.getById(articleId)).isEqualTo(responseDto);
+        Assertions.assertThat(service.getById(articleId)).isEqualTo(responseDto);
     }
 
     @Test
     void getByIdShouldThrow() {
         when(articleRepository.findById(articleId)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.getById(articleId))
+        Assertions.assertThatThrownBy(() -> service.getById(articleId))
                 .isInstanceOf(ArticleNotFoundException.class);
     }
 
@@ -116,7 +110,7 @@ class ArticleServiceTest {
 
         List<ArticleResponseDto> result = service.getByTitle("Test");
 
-        assertThat(result).hasSize(1);
+        Assertions.assertThat(result).hasSize(1);
     }
 
     @Test
@@ -125,7 +119,9 @@ class ArticleServiceTest {
         when(articleRepository.save(article)).thenReturn(article);
         when(mapper.toResponse(article)).thenReturn(responseDto);
 
-        assertThat(service.update(articleId, new ArticleUpdateDto())).isEqualTo(responseDto);
+        Assertions.assertThat(service.update(articleId, new ArticleUpdateDto()))
+                .isEqualTo(responseDto);
+
         verify(mapper).updateEntity(eq(article), any());
     }
 
@@ -142,14 +138,14 @@ class ArticleServiceTest {
         when(articleRepository.saveAll(any())).thenReturn(List.of(article));
         when(mapper.toResponse(article)).thenReturn(responseDto);
 
-        assertThat(service.createBulk(List.of(requestDto))).hasSize(1);
+        Assertions.assertThat(service.createBulk(List.of(requestDto))).hasSize(1);
     }
 
     @Test
     void createBulkShouldThrowIfUserNotFound() {
         when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.createBulk(List.of(requestDto)))
+        Assertions.assertThatThrownBy(() -> service.createBulk(List.of(requestDto)))
                 .isInstanceOf(UserNotFoundException.class);
     }
 
@@ -160,13 +156,16 @@ class ArticleServiceTest {
         fail.setTitle("FAIL");
 
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
-        when(mapper.toEntity(any())).thenAnswer(i -> {
+        when(mapper.toEntity(any())).thenAnswer(invocation -> {
             Article a = new Article();
-            a.setTitle(((ArticleRequestDto) i.getArgument(0)).getTitle());
+            ArticleRequestDto dto = invocation.getArgument(0);
+            a.setTitle(dto.getTitle());
             return a;
         });
 
-        assertThatThrownBy(() -> service.createBulkNoTrx(List.of(requestDto, fail)))
+        List<ArticleRequestDto> input = List.of(requestDto, fail);
+
+        Assertions.assertThatThrownBy(() -> service.createBulkNoTrx(input))
                 .isInstanceOf(TransactionSimulationException.class);
     }
 
@@ -179,7 +178,7 @@ class ArticleServiceTest {
 
         List<ArticleResponseDto> result = service.createBulkNoTrx(List.of(requestDto));
 
-        assertThat(result).hasSize(1);
+        Assertions.assertThat(result).hasSize(1);
     }
 
     @Test
@@ -189,13 +188,16 @@ class ArticleServiceTest {
         fail.setTitle("FAIL");
 
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
-        when(mapper.toEntity(any())).thenAnswer(i -> {
+        when(mapper.toEntity(any())).thenAnswer(invocation -> {
             Article a = new Article();
-            a.setTitle(((ArticleRequestDto) i.getArgument(0)).getTitle());
+            ArticleRequestDto dto = invocation.getArgument(0);
+            a.setTitle(dto.getTitle());
             return a;
         });
 
-        assertThatThrownBy(() -> service.createBulkTrx(List.of(requestDto, fail)))
+        List<ArticleRequestDto> input = List.of(requestDto, fail);
+
+        Assertions.assertThatThrownBy(() -> service.createBulkTrx(input))
                 .isInstanceOf(TransactionSimulationException.class);
     }
 
@@ -208,7 +210,7 @@ class ArticleServiceTest {
 
         List<ArticleResponseDto> result = service.createBulkTrx(List.of(requestDto));
 
-        assertThat(result).hasSize(1);
+        Assertions.assertThat(result).hasSize(1);
     }
 
     @Test
@@ -223,7 +225,7 @@ class ArticleServiceTest {
         Page<ArticleResponseDto> first = service.searchArticles(filter, pageable);
         Page<ArticleResponseDto> second = service.searchArticles(filter, pageable);
 
-        assertThat(first).isEqualTo(second);
+        Assertions.assertThat(first).isEqualTo(second);
     }
 
     @Test
@@ -238,7 +240,7 @@ class ArticleServiceTest {
         Page<ArticleResponseDto> first = service.searchArticlesNative(filter, pageable);
         Page<ArticleResponseDto> second = service.searchArticlesNative(filter, pageable);
 
-        assertThat(first).isEqualTo(second);
+        Assertions.assertThat(first).isEqualTo(second);
     }
 
     @Test
@@ -249,7 +251,7 @@ class ArticleServiceTest {
 
         when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> service.createBulkNoTrx(List.of(dto)))
+        Assertions.assertThatThrownBy(() -> service.createBulkNoTrx(List.of(dto)))
                 .isInstanceOf(UserNotFoundException.class);
     }
 
@@ -262,12 +264,11 @@ class ArticleServiceTest {
 
         when(articleRepository.searchArticlesNative(any(), eq(null), any()))
                 .thenReturn(new PageImpl<>(List.of(article)));
-
         when(mapper.toResponse(article)).thenReturn(responseDto);
 
         Page<ArticleResponseDto> result = service.searchArticlesNative(filter, pageable);
 
-        assertThat(result).hasSize(1);
+        Assertions.assertThat(result).hasSize(1);
     }
 
     @Test
@@ -279,11 +280,10 @@ class ArticleServiceTest {
 
         when(articleRepository.searchArticlesNative(any(), eq("DRAFT"), any()))
                 .thenReturn(new PageImpl<>(List.of(article)));
-
         when(mapper.toResponse(article)).thenReturn(responseDto);
 
         Page<ArticleResponseDto> result = service.searchArticlesNative(filter, pageable);
 
-        assertThat(result).hasSize(1);
+        Assertions.assertThat(result).hasSize(1);
     }
 }
