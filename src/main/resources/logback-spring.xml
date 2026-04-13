@@ -24,7 +24,7 @@
 
             <fileNamePattern>${LOG_PATH}/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
 
-            <maxFileSize>32KB</maxFileSize>
+            <maxFileSize>32MB</maxFileSize>
 
             <maxHistory>30</maxHistory>
 

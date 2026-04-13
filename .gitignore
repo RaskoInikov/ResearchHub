@@ -38,3 +38,10 @@ out/
 
 ### Logs ###
 logs/
+
+### Jmeter ###
+report/
+
+jmeter.log
+
+results.jtl
