@@ -23,6 +23,11 @@ public class AsyncWorker {
 
             taskStorage.update(taskId, TaskStatus.FINISHED);
 
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+
+            taskStorage.update(taskId, TaskStatus.FAILED);
+
         } catch (Exception e) {
             taskStorage.update(taskId, TaskStatus.FAILED);
         }
