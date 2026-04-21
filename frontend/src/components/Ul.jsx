@@ -1,0 +1,1 @@
+const Ul = ({ items, renderItem }) => { return ( <ul> {items.map((item, index) => ( <li key={index}>{renderItem(item)}</li> ))} </ul> ); }; export default Ul;

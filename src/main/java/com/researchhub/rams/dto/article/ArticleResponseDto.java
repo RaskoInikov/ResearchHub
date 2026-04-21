@@ -1,7 +1,10 @@
 package com.researchhub.rams.dto.article;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
+
+import com.researchhub.rams.dto.tag.TagResponseDto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -22,4 +25,6 @@ public class ArticleResponseDto {
     private String status;
     private Instant publicationDate;
     private UUID authorId;
+
+    private List<TagResponseDto> tags;
 }

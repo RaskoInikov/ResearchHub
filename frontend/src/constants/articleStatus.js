@@ -1,0 +1,8 @@
+export const ARTICLE_STATUS = [
+  "DRAFT",
+  "SUBMITTED",
+  "UNDER_REVIEW",
+  "ACCEPTED",
+  "REJECTED",
+  "PUBLISHED",
+];

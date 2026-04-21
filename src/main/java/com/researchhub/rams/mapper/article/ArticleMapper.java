@@ -1,17 +1,23 @@
 package com.researchhub.rams.mapper.article;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Component;
 
 import com.researchhub.rams.dto.article.ArticleRequestDto;
 import com.researchhub.rams.dto.article.ArticleResponseDto;
 import com.researchhub.rams.dto.article.ArticleUpdateDto;
+import com.researchhub.rams.dto.tag.TagResponseDto;
 import com.researchhub.rams.entity.article.Article;
+import com.researchhub.rams.entity.articletag.ArticleTag;
 
 @Component
 public class ArticleMapper {
 
     public ArticleResponseDto toResponse(Article article) {
         ArticleResponseDto dto = new ArticleResponseDto();
+
         dto.setId(article.getId());
         dto.setTitle(article.getTitle());
         dto.setAbstractText(article.getAbstractText());
@@ -19,6 +25,21 @@ public class ArticleMapper {
         dto.setStatus(article.getStatus().name());
         dto.setPublicationDate(article.getPublicationDate());
         dto.setAuthorId(article.getAuthor().getId());
+
+        List<TagResponseDto> tags = article.getArticleTags()
+                .stream()
+                .map(ArticleTag::getTag)
+                .map(tag -> {
+                    TagResponseDto t = new TagResponseDto();
+                    t.setId(tag.getId());
+                    t.setName(tag.getName());
+                    t.setDescription(tag.getDescription());
+                    return t;
+                })
+                .collect(Collectors.toList());
+
+        dto.setTags(tags);
+
         return dto;
     }
 

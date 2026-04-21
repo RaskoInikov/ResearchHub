@@ -12,18 +12,22 @@ import com.researchhub.rams.dto.tag.TagUpdateDto;
 import com.researchhub.rams.entity.tag.Tag;
 import com.researchhub.rams.exceptions.TagNotFoundException;
 import com.researchhub.rams.mapper.tag.TagMapper;
+import com.researchhub.rams.repository.ArticleTagRepository;
 import com.researchhub.rams.repository.TagRepository;
 
 @Service
 @Transactional
 public class TagService {
 
+    private final ArticleTagRepository articleTagRepository;
     private final TagRepository repository;
     private final TagMapper mapper;
 
-    public TagService(TagRepository repository, TagMapper mapper) {
+    public TagService(TagRepository repository, TagMapper mapper,
+                    ArticleTagRepository articleTagRepository) {
         this.repository = repository;
         this.mapper = mapper;
+        this.articleTagRepository = articleTagRepository;
     }
 
     public TagResponseDto create(TagRequestDto dto) {
@@ -57,7 +61,14 @@ public class TagService {
         return mapper.toResponse(repository.save(tag));
     }
 
+    @Transactional
     public void delete(UUID id) {
+
+        if (articleTagRepository != null) {
+            articleTagRepository.deleteByTagId(id);
+            articleTagRepository.flush();
+        }
+
         repository.deleteById(id);
     }
 }

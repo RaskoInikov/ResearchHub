@@ -41,6 +41,7 @@ logs/
 
 ### Jmeter ###
 report/
+reports/
 
 jmeter.log
 
