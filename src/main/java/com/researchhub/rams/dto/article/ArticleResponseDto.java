@@ -16,7 +16,6 @@ import lombok.Setter;
 @Schema(description = "Response DTO for article")
 public class ArticleResponseDto {
 
-    @Schema(example = "550e8400-e29b-41d4-a716-446655440000")
     private UUID id;
 
     private String title;
@@ -27,4 +26,6 @@ public class ArticleResponseDto {
     private UUID authorId;
 
     private List<TagResponseDto> tags;
+
+    private Double rating;
 }

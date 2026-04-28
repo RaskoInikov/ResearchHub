@@ -7,6 +7,12 @@ import {
 } from "../api/articles";
 import { rateArticle } from "../api/reviews";
 
+import {
+  getCommentsByArticle,
+  createComment,
+  deleteComment
+} from "../api/comments";
+
 import Button from "../components/ui/Button";
 import Rating from "../components/ui/Rating";
 import { useToast } from "../components/ui/Toast";
@@ -19,8 +25,6 @@ import { updateArticleTags } from "../api/articleTags";
 
 const USER_ID = "ac897eb7-56d5-46da-a2de-32b45f999ad3";
 
-const STORAGE_KEY = "article_tags_map";
-
 const ArticlesPage = () => {
   const { data, refetch } = useArticles({});
   const rawArticles = data?.content || [];
@@ -29,33 +33,35 @@ const ArticlesPage = () => {
   const { show } = useToast();
 
   const [articles, setArticles] = useState([]);
-
   const [selected, setSelected] = useState(null);
+
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [editing, setEditing] = useState(null);
 
-  const pageSize = 8;
+  const pageSize = 9;
 
-  // 🔥 LOAD TAGS FROM LOCAL STORAGE
   useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    setArticles(rawArticles);
 
-    const enriched = rawArticles.map(a => ({
-      ...a,
-      tagIds: saved[a.id] || []
-    }));
-
-    setArticles(enriched);
+    if (selected) {
+      const updated = rawArticles.find(a => a.id === selected.id);
+      if (updated) setSelected(updated);
+    }
   }, [rawArticles]);
 
-  const saveTags = (articleId, tagIds) => {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-    saved[articleId] = tagIds;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
-  };
+  useEffect(() => {
+    if (!selected) return;
+
+    getCommentsByArticle(selected.id)
+      .then(res => setComments(res.data))
+      .catch(() => show("Failed to load comments"));
+  }, [selected]);
 
   const filtered = articles.filter(a =>
     a.title.toLowerCase().includes(search.toLowerCase())
@@ -65,32 +71,31 @@ const ArticlesPage = () => {
 
   const toggleTag = async (article, tagId) => {
     try {
-      const exists = article.tagIds.includes(tagId);
+      const current = article.tags?.map(t => t.id) || [];
 
-      const updated = exists
-        ? article.tagIds.filter(id => id !== tagId)
-        : [...article.tagIds, tagId];
+      const updatedIds = current.includes(tagId)
+        ? current.filter(id => id !== tagId)
+        : [...current, tagId];
 
-      await updateArticleTags(article.id, updated);
+      const updatedTags = tags.filter(t => updatedIds.includes(t.id));
 
-      // 🔥 UPDATE LOCAL STATE
       setArticles(prev =>
         prev.map(a =>
-          a.id === article.id ? { ...a, tagIds: updated } : a
+          a.id === article.id ? { ...a, tags: updatedTags } : a
         )
       );
 
-      // 🔥 PERSIST
-      saveTags(article.id, updated);
+      setSelected(prev =>
+        prev?.id === article.id ? { ...prev, tags: updatedTags } : prev
+      );
 
+      await updateArticleTags(article.id, updatedIds);
       show("Tags updated");
-    } catch (e) {
-      console.error(e.response?.data);
+    } catch {
       show("Tag update failed");
     }
   };
 
-  // ===== CRUD =====
   const handleCreate = async (data) => {
     try {
       await createArticle(data);
@@ -118,12 +123,6 @@ const ArticlesPage = () => {
     try {
       await deleteArticle(id);
       show("Article deleted");
-
-      // 🔥 CLEAN STORAGE
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-      delete saved[id];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
-
       if (selected?.id === id) setSelected(null);
       refetch();
     } catch {
@@ -133,6 +132,16 @@ const ArticlesPage = () => {
 
   const handleRate = async (articleId, score) => {
     try {
+      setArticles(prev =>
+        prev.map(a =>
+          a.id === articleId ? { ...a, rating: score } : a
+        )
+      );
+
+      setSelected(prev =>
+        prev?.id === articleId ? { ...prev, rating: score } : prev
+      );
+
       await rateArticle({
         articleId: String(articleId),
         score: Number(score),
@@ -140,39 +149,73 @@ const ArticlesPage = () => {
       });
 
       show("Rating saved");
-      refetch();
-    } catch (e) {
-      console.error(e.response?.data);
+    } catch {
       show("Rating failed");
     }
   };
 
+  const handleAddComment = async () => {
+    if (!newComment.trim()) return;
+
+    try {
+      const res = await createComment({
+        text: newComment,
+        articleId: selected.id,
+        authorId: USER_ID
+      });
+
+      setComments(prev => [...prev, res.data]);
+      setNewComment("");
+      show("Comment added");
+    } catch {
+      show("Failed to add comment");
+    }
+  };
+
+  const handleDeleteComment = async (id) => {
+    try {
+      await deleteComment(id);
+      setComments(prev => prev.filter(c => c.id !== id));
+      show("Comment deleted");
+    } catch {
+      show("Failed to delete comment");
+    }
+  };
+
+  const shouldScrollComments = comments.length > 2;
+
   return (
-    <div className="articles-container">
+    <div className="articles-container no-scroll">
+
       {/* HEADER */}
-      <div className="articles-header">
+      <div className="articles-header improved">
         <div className="page-title">
           <h1>Articles</h1>
           <span>Manage and explore research content</span>
         </div>
 
-        <div className="actions">
+        <div className="actions improved">
           <input
+            className="search-input"
             placeholder="Search articles..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
 
-          <Button onClick={() => {
-            setEditing(null);
-            setModalOpen(true);
-          }}>
+          <Button
+            className="create-btn"
+            onClick={() => {
+              setEditing(null);
+              setModalOpen(true);
+            }}
+          >
             + Create
           </Button>
         </div>
       </div>
 
       <div className="articles-layout list-view">
+
         {/* LIST */}
         <div className="articles-list">
           {paginated.map(article => (
@@ -202,18 +245,25 @@ const ArticlesPage = () => {
 
         {/* DETAILS */}
         {selected && (
-          <div className="details-panel compact">
+          <div className="details-panel compact fixed">
+
             <div className="details-header">
               <h2>{selected.title}</h2>
-              <Button onClick={() => setSelected(null)}>✕</Button>
+
+              <button
+                className="close-btn"
+                onClick={() => setSelected(null)}
+              >
+                ✕
+              </button>
             </div>
 
+            {/* TAGS */}
             <div className="details-block">
               <label>Tags</label>
-
               <div className="tag-articles">
                 {tags.map(tag => {
-                  const has = selected.tagIds?.includes(tag.id);
+                  const has = selected.tags?.some(t => t.id === tag.id);
 
                   return (
                     <div
@@ -236,6 +286,42 @@ const ArticlesPage = () => {
             <div className="details-block">
               <label>Content</label>
               <p>{selected.content}</p>
+            </div>
+
+            {/* COMMENTS */}
+            <div className="details-block">
+              <label>Comments</label>
+
+              <div
+                className="comments"
+                style={
+                  shouldScrollComments
+                    ? { maxHeight: "180px", overflowY: "auto" }
+                    : {}
+                }
+              >
+                {comments.map(c => (
+                  <div key={c.id} className="comment">
+                    <span>{c.text}</span>
+
+                    <button
+                      className="delete-comment-btn"
+                      onClick={() => handleDeleteComment(c.id)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <div className="comment-input">
+                <input
+                  placeholder="Write a comment..."
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+                />
+                <Button onClick={handleAddComment}>Add</Button>
+              </div>
             </div>
 
             <div className="details-actions">
@@ -272,7 +358,7 @@ const ArticlesPage = () => {
           disabled={page === 0}
           onClick={() => setPage(p => Math.max(0, p - 1))}
         >
-          ← Previous
+          ←
         </Button>
 
         <span>Page {page + 1}</span>
@@ -282,11 +368,10 @@ const ArticlesPage = () => {
           disabled={(page + 1) * pageSize >= filtered.length}
           onClick={() => setPage(p => p + 1)}
         >
-          Next →
+          →
         </Button>
       </div>
 
-      {/* MODAL */}
       <ArticleModal open={modalOpen} onClose={() => setModalOpen(false)}>
         <ArticleForm
           initialData={editing}

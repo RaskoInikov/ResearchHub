@@ -2,34 +2,28 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <aside className="sidebar">
-      {/* LOGO / TITLE */}
-      <div className="sidebar-header">
-        <h2>ResearchHub</h2>
-        <span className="subtitle">Knowledge Base</span>
+    <aside
+      style={{
+        width: "240px",
+        background: "#f0e9dc",
+        padding: "20px",
+        display: "flex",
+        flexDirection: "column"
+      }}
+    >
+      <div style={{ marginBottom: "20px" }}>
+        <h3 style={{ margin: 0 }}>ResearchHub</h3>
+        <small style={{ color: "#777" }}>Knowledge Base</small>
       </div>
 
-      {/* NAVIGATION */}
-      <nav className="sidebar-nav">
-        <NavLink to="/" className="nav-item">
-          <span>📄</span>
-          <span>Articles</span>
-        </NavLink>
-
-        <NavLink to="/users" className="nav-item">
-          <span>👤</span>
-          <span>Users</span>
-        </NavLink>
-
-        <NavLink to="/tags" className="nav-item">
-          <span>🏷</span>
-          <span>Tags</span>
-        </NavLink>
+      <nav style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+        <NavLink to="/" className="nav-item">📄 Articles</NavLink>
+        <NavLink to="/users" className="nav-item">👤 Users</NavLink>
+        <NavLink to="/tags" className="nav-item">🏷 Tags</NavLink>
       </nav>
 
-      {/* FOOTER */}
-      <div className="sidebar-footer">
-        <span>v1.0</span>
+      <div style={{ marginTop: "auto", fontSize: "12px", color: "#888" }}>
+        v1.0
       </div>
     </aside>
   );

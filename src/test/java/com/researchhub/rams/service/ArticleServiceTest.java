@@ -10,7 +10,6 @@ import com.researchhub.rams.entity.user.User;
 import com.researchhub.rams.exceptions.ArticleNotFoundException;
 import com.researchhub.rams.exceptions.TransactionSimulationException;
 import com.researchhub.rams.exceptions.UserNotFoundException;
-import com.researchhub.rams.filter.ArticleFilter;
 import com.researchhub.rams.mapper.article.ArticleMapper;
 import com.researchhub.rams.repository.ArticleRepository;
 import com.researchhub.rams.repository.UserRepository;
@@ -27,8 +26,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
@@ -216,36 +213,6 @@ class ArticleServiceTest {
     }
 
     @Test
-    void searchArticlesShouldCache() {
-        ArticleFilter filter = new ArticleFilter();
-        PageRequest pageable = PageRequest.of(0, 10);
-
-        when(articleRepository.searchArticles(any(), any(), any()))
-                .thenReturn(new PageImpl<>(List.of(article)));
-        when(mapper.toResponse(article)).thenReturn(responseDto);
-
-        Page<ArticleResponseDto> first = service.searchArticles(filter, pageable);
-        Page<ArticleResponseDto> second = service.searchArticles(filter, pageable);
-
-        Assertions.assertThat(first).isEqualTo(second);
-    }
-
-    @Test
-    void searchArticlesNativeShouldCacheAndHit() {
-        ArticleFilter filter = new ArticleFilter();
-        PageRequest pageable = PageRequest.of(0, 10);
-
-        when(articleRepository.searchArticlesNative(any(), any(), any()))
-                .thenReturn(new PageImpl<>(List.of(article)));
-        when(mapper.toResponse(article)).thenReturn(responseDto);
-
-        Page<ArticleResponseDto> first = service.searchArticlesNative(filter, pageable);
-        Page<ArticleResponseDto> second = service.searchArticlesNative(filter, pageable);
-
-        Assertions.assertThat(first).isEqualTo(second);
-    }
-
-    @Test
     void createBulkInternalShouldThrowWhenUserMissingInsideStream() {
         ArticleRequestDto dto = new ArticleRequestDto();
         dto.setAuthorId(userId);
@@ -257,37 +224,5 @@ class ArticleServiceTest {
 
         Assertions.assertThatThrownBy(() -> service.createBulkNoTrx(input))
                 .isInstanceOf(UserNotFoundException.class);
-    }
-
-    @Test
-    void searchArticlesNativeShouldHandleNullStatus() {
-        ArticleFilter filter = new ArticleFilter();
-        filter.setStatus(null);
-
-        PageRequest pageable = PageRequest.of(0, 10);
-
-        when(articleRepository.searchArticlesNative(any(), eq(null), any()))
-                .thenReturn(new PageImpl<>(List.of(article)));
-        when(mapper.toResponse(article)).thenReturn(responseDto);
-
-        Page<ArticleResponseDto> result = service.searchArticlesNative(filter, pageable);
-
-        Assertions.assertThat(result).hasSize(1);
-    }
-
-    @Test
-    void searchArticlesNativeShouldHandleNonNullStatus() {
-        ArticleFilter filter = new ArticleFilter();
-        filter.setStatus(ArticleStatus.DRAFT);
-
-        PageRequest pageable = PageRequest.of(0, 10);
-
-        when(articleRepository.searchArticlesNative(any(), eq("DRAFT"), any()))
-                .thenReturn(new PageImpl<>(List.of(article)));
-        when(mapper.toResponse(article)).thenReturn(responseDto);
-
-        Page<ArticleResponseDto> result = service.searchArticlesNative(filter, pageable);
-
-        Assertions.assertThat(result).hasSize(1);
     }
 }

@@ -88,14 +88,6 @@ public class ArticleController {
         return service.searchArticles(filter, pageable);
     }
 
-    @Operation(summary = "Search articles (native SQL)")
-    @GetMapping("/search-native")
-    public Page<ArticleResponseDto> searchArticlesNative(
-            ArticleFilter filter,
-            Pageable pageable) {
-        return service.searchArticlesNative(filter, pageable);
-    }
-
     @Operation(summary = "Create multiple articles (bulk, with/without transaction)")
     @PostMapping("/bulk")
     public ResponseEntity<List<ArticleResponseDto>> createBulk(

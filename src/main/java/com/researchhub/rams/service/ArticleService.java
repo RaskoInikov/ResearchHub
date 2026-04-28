@@ -104,57 +104,38 @@ public class ArticleService {
         return article;
     }
 
-    @Transactional(readOnly = true)
-    public Page<ArticleResponseDto> searchArticles(ArticleFilter filter, Pageable pageable) {
+@Transactional(readOnly = true)
+public Page<ArticleResponseDto> searchArticles(ArticleFilter filter, Pageable pageable) {
 
-        QueryKey key = new QueryKey(
-                filter.getAuthorName(),
-                filter.getStatus(),
-                pageable.getPageNumber(),
-                pageable.getPageSize()
-        );
+    QueryKey key = new QueryKey(
+            filter.getAuthorName(),
+            filter.getStatus(),
+            pageable.getPageNumber(),
+            pageable.getPageSize()
+    );
 
-        if (cache.containsKey(key)) {
-            return cache.get(key);
-        }
-
-        Page<ArticleResponseDto> result =
-                articleRepository.searchArticles(
-                        filter.getAuthorName(),
-                        filter.getStatus(),
-                        pageable
-                ).map(mapper::toResponse);
-
-        cache.put(key, result);
-
-        return result;
+    if (cache.containsKey(key)) {
+        return cache.get(key);
     }
 
-    @Transactional(readOnly = true)
-    public Page<ArticleResponseDto> searchArticlesNative(ArticleFilter filter, Pageable pageable) {
+    Page<Article> page;
 
-        QueryKey key = new QueryKey(
+    if (filter.getAuthorName() != null && filter.getStatus() != null) {
+        page = articleRepository.searchWithFilters(
                 filter.getAuthorName(),
                 filter.getStatus(),
-                pageable.getPageNumber(),
-                pageable.getPageSize()
+                pageable
         );
-
-        if (cache.containsKey(key)) {
-            return cache.get(key);
-        }
-
-        Page<ArticleResponseDto> result =
-                articleRepository.searchArticlesNative(
-                        filter.getAuthorName(),
-                        filter.getStatus() != null ? filter.getStatus().name() : null,
-                        pageable
-                ).map(mapper::toResponse);
-
-        cache.put(key, result);
-
-        return result;
+    } else {
+        page = articleRepository.searchAll(pageable);
     }
+
+    Page<ArticleResponseDto> result = page.map(mapper::toResponse);
+
+    cache.put(key, result);
+
+    return result;
+}
 
     @Transactional
     public List<ArticleResponseDto> createBulk(List<ArticleRequestDto> dtos) {

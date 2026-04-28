@@ -1,7 +1,6 @@
 package com.researchhub.rams.mapper.article;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
@@ -36,9 +35,17 @@ public class ArticleMapper {
                     t.setDescription(tag.getDescription());
                     return t;
                 })
-                .collect(Collectors.toList());
+                .toList();
 
         dto.setTags(tags);
+
+        double avg = article.getReviews()
+                .stream()
+                .mapToInt(r -> r.getScore())
+                .average()
+                .orElse(0.0);
+
+        dto.setRating(avg);
 
         return dto;
     }
