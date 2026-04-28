@@ -217,7 +217,7 @@ const ArticlesPage = () => {
               setModalOpen(true);
             }}
           >
-            + Create
+            +
           </Button>
         </div>
       </div>

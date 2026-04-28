@@ -116,7 +116,7 @@ const UsersPage = () => {
           <div className="details-panel compact">
             <div className="details-header">
               <h2>{selected.username}</h2>
-              <Button onClick={() => setSelected(null)}>✕</Button>
+              <Button className="close-btn" onClick={() => setSelected(null)}>✕</Button>
             </div>
 
             <div className="details-block">
