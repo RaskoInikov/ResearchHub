@@ -47,6 +47,10 @@ const ArticlesPage = () => {
   const pageSize = 9;
 
   useEffect(() => {
+    refetch();
+  }, []);
+
+  useEffect(() => {
     setArticles(rawArticles);
 
     if (selected) {
@@ -70,26 +74,29 @@ const ArticlesPage = () => {
   const paginated = filtered.slice(page * pageSize, (page + 1) * pageSize);
 
   const toggleTag = async (article, tagId) => {
+    const current = article.tags?.map(t => t.id) || [];
+
+    const updatedIds = current.includes(tagId)
+      ? current.filter(id => id !== tagId)
+      : [...current, tagId];
+
+    const updatedTags = tags.filter(t => updatedIds.includes(t.id));
+
+    setArticles(prev =>
+      prev.map(a =>
+        a.id === article.id ? { ...a, tags: updatedTags } : a
+      )
+    );
+
+    setSelected(prev =>
+      prev?.id === article.id ? { ...prev, tags: updatedTags } : prev
+    );
+
     try {
-      const current = article.tags?.map(t => t.id) || [];
-
-      const updatedIds = current.includes(tagId)
-        ? current.filter(id => id !== tagId)
-        : [...current, tagId];
-
-      const updatedTags = tags.filter(t => updatedIds.includes(t.id));
-
-      setArticles(prev =>
-        prev.map(a =>
-          a.id === article.id ? { ...a, tags: updatedTags } : a
-        )
-      );
-
-      setSelected(prev =>
-        prev?.id === article.id ? { ...prev, tags: updatedTags } : prev
-      );
-
       await updateArticleTags(article.id, updatedIds);
+
+      await refetch();
+
       show("Tags updated");
     } catch {
       show("Tag update failed");
@@ -131,23 +138,24 @@ const ArticlesPage = () => {
   };
 
   const handleRate = async (articleId, score) => {
+    setArticles(prev =>
+      prev.map(a =>
+        a.id === articleId ? { ...a, rating: score } : a
+      )
+    );
+
+    setSelected(prev =>
+      prev?.id === articleId ? { ...prev, rating: score } : prev
+    );
+
     try {
-      setArticles(prev =>
-        prev.map(a =>
-          a.id === articleId ? { ...a, rating: score } : a
-        )
-      );
-
-      setSelected(prev =>
-        prev?.id === articleId ? { ...prev, rating: score } : prev
-      );
-
       await rateArticle({
         articleId: String(articleId),
         score: Number(score),
         reviewerId: USER_ID
       });
 
+      await refetch();
       show("Rating saved");
     } catch {
       show("Rating failed");
@@ -258,10 +266,14 @@ const ArticlesPage = () => {
               </button>
             </div>
 
-            {/* TAGS */}
+            {/* TAGS WITH SCROLL */}
             <div className="details-block">
               <label>Tags</label>
-              <div className="tag-articles">
+
+              <div
+                className="tag-articles"
+                style={{ maxHeight: "120px", overflowY: "auto" }}
+              >
                 {tags.map(tag => {
                   const has = selected.tags?.some(t => t.id === tag.id);
 
@@ -281,11 +293,6 @@ const ArticlesPage = () => {
             <div className="details-block">
               <label>Summary</label>
               <p>{selected.summary}</p>
-            </div>
-
-            <div className="details-block">
-              <label>Content</label>
-              <p>{selected.content}</p>
             </div>
 
             {/* COMMENTS */}
